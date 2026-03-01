@@ -1,0 +1,2934 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلّم.ما - المنصة التعليمية المغربية العملاقة</title>
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS للأنيميشن -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Chart.js للرسوم البيانية -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        /* ========== متغيرات متقدمة جداً ========== */
+        :root {
+            --primary: #1e3c72;
+            --primary-light: #2a5298;
+            --primary-dark: #0f2b4f;
+            --primary-gradient: linear-gradient(135deg, #1e3c72, #2a5298, #1e3c72);
+            
+            --secondary: #ffd700;
+            --secondary-light: #ffed4a;
+            --secondary-dark: #e6b800;
+            --secondary-gradient: linear-gradient(135deg, #ffd700, #ffed4a, #ffd700);
+            
+            --success: #28a745;
+            --success-light: #d4edda;
+            --danger: #dc3545;
+            --danger-light: #f8d7da;
+            --warning: #ffc107;
+            --warning-light: #fff3cd;
+            --info: #17a2b8;
+            --info-light: #d1ecf1;
+            
+            --dark: #343a40;
+            --dark-light: #6c757d;
+            --light: #f8f9fa;
+            --light-dark: #e9ecef;
+            --gray: #6c757d;
+            --gray-light: #adb5bd;
+            --white: #ffffff;
+            
+            --shadow-xs: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
+            --shadow-xl: 0 12px 32px rgba(0,0,0,0.1);
+            --shadow-2xl: 0 20px 48px rgba(0,0,0,0.15);
+            --shadow-3xl: 0 30px 64px rgba(0,0,0,0.2);
+            
+            --radius-xs: 4px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-3xl: 48px;
+            --radius-full: 9999px;
+            
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            --font-primary: 'Cairo', 'Tajawal', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-md: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 2rem;
+            --font-size-4xl: 2.5rem;
+            --font-size-5xl: 3rem;
+            
+            --font-weight-light: 300;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            --font-weight-extrabold: 800;
+            --font-weight-black: 900;
+        }
+
+        /* ========== إعادة تعيين متقدمة ========== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ========== خلفية متحركة محسنة ========== */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .animated-bg span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+            will-change: transform, opacity;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ========== شريط التحميل ========== */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+            z-index: 9999;
+        }
+
+        .loading-bar.active {
+            transform: scaleX(1);
+        }
+
+        /* ========== الشريط العلوي العملاق ========== */
+        .navbar {
+            background: rgba(30, 60, 114, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-2xl);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-black);
+            background: linear-gradient(135deg, var(--white), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            position: relative;
+            letter-spacing: -1px;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+            transform: scaleX(0);
+            transition: transform var(--transition-normal);
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.2);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-size: var(--font-size-md);
+            font-weight: var(--font-weight-semibold);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .nav-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .nav-btn:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .user-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            color: var(--white);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: var(--font-size-md);
+            transition: var(--transition-normal);
+        }
+
+        .user-badge:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* ========== لوحة التحكم الرئيسية ========== */
+        .dashboard {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========== بطاقة الترحيب الفائقة ========== */
+        .welcome-card {
+            background: linear-gradient(135deg, rgba(30,60,114,0.95), rgba(15,43,79,0.98));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-3xl);
+            margin-bottom: 2rem;
+            animation: slideUp 0.5s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: var(--shadow-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-card::before {
+            content: '📚';
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.1;
+            left: -100px;
+            bottom: -100px;
+            transform: rotate(-15deg);
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .welcome-card::after {
+            content: '🎓';
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.1;
+            right: -100px;
+            top: -100px;
+            transform: rotate(15deg);
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(-15deg) translateY(0); }
+            50% { transform: rotate(-15deg) translateY(-20px); }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-title {
+            font-size: var(--font-size-5xl);
+            font-weight: var(--font-weight-black);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: var(--transition-fast);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: var(--font-size-lg);
+        }
+
+        .welcome-stat:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* ========== شبكة الإحصائيات العملاقة ========== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition-normal);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: fadeIn 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            transform: scaleX(0);
+            transition: transform var(--transition-normal);
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-3xl);
+        }
+
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .stat-content {
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-black);
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: var(--font-size-lg);
+        }
+
+        .stat-trend {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.5rem;
+            font-size: var(--font-size-sm);
+        }
+
+        .trend-up {
+            color: var(--success);
+        }
+
+        .trend-down {
+            color: var(--danger);
+        }
+
+        /* ========== نظام البحث العملاق ========== */
+        .search-section {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: var(--radius-3xl);
+            box-shadow: var(--shadow-2xl);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .search-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .search-header h2 {
+            color: var(--primary);
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .results-count {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 2rem;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-medium);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .search-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .search-input-group {
+            position: relative;
+        }
+
+        .search-input-group i {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            z-index: 1;
+            font-size: var(--font-size-lg);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.2rem 1.2rem 1.2rem 3rem;
+            border: 2px solid var(--light-dark);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-md);
+            transition: var(--transition-fast);
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(30,60,114,0.1);
+        }
+
+        .search-input::placeholder {
+            color: var(--gray-light);
+        }
+
+        .search-btn {
+            background: var(--primary-gradient);
+            color: var(--white);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* ========== الفلاتر النشطة ========== */
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .filter-tag {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: slideIn 0.3s ease;
+            font-size: var(--font-size-sm);
+            box-shadow: var(--shadow-md);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .filter-tag button {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            transition: var(--transition-fast);
+        }
+
+        .filter-tag button:hover {
+            color: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        /* ========== أقسام التلميذ ========== */
+        .student-tabs {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            transition: var(--transition-normal);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tab-btn.active {
+            background: var(--secondary-gradient);
+            color: var(--primary);
+            border-color: var(--secondary);
+        }
+
+        /* ========== شبكة الأساتذة العملاقة ========== */
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        .teacher-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius-3xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            transition: var(--transition-normal);
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: scaleIn 0.5s ease;
+            position: relative;
+        }
+
+        .teacher-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: var(--radius-3xl);
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, var(--secondary), var(--primary)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            pointer-events: none;
+        }
+
+        .teacher-card:hover::after {
+            opacity: 1;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-3xl);
+        }
+
+        .teacher-header {
+            height: 120px;
+            background: var(--primary-gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .teacher-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .teacher-avatar {
+            width: 120px;
+            height: 120px;
+            background: var(--white);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -50px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: var(--shadow-2xl);
+            border: 5px solid var(--white);
+            transition: var(--transition-bounce);
+            z-index: 2;
+        }
+
+        .teacher-card:hover .teacher-avatar {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .teacher-info {
+            padding: 5rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .teacher-name {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .teacher-specialty {
+            color: var(--secondary-dark);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: 1rem;
+            font-size: var(--font-size-lg);
+        }
+
+        .teacher-bio {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: var(--font-size-sm);
+        }
+
+        .teacher-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .stat-badge {
+            background: var(--light);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-fast);
+            border: 1px solid var(--light-dark);
+        }
+
+        .stat-badge:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .follow-btn {
+            width: 100%;
+            padding: 1.2rem;
+            border: none;
+            border-radius: var(--radius-full);
+            background: var(--primary-gradient);
+            color: var(--white);
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+            font-size: var(--font-size-lg);
+        }
+
+        .follow-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .follow-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .follow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .follow-btn.following {
+            background: var(--success);
+        }
+
+        /* ========== نظام رفع الملفات المتطور ========== */
+        .file-upload-section {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: var(--radius-3xl);
+            box-shadow: var(--shadow-2xl);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .file-upload-area {
+            border: 3px dashed var(--primary);
+            border-radius: var(--radius-2xl);
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-upload-area:hover {
+            background: rgba(30,60,114,0.05);
+            border-color: var(--secondary);
+            transform: scale(1.02);
+        }
+
+        .file-upload-area.dragover {
+            background: rgba(30,60,114,0.1);
+            border-color: var(--success);
+            transform: scale(1.05);
+        }
+
+        .file-upload-area i {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .file-upload-area h3 {
+            font-size: var(--font-size-2xl);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .file-upload-area p {
+            color: var(--gray);
+            font-size: var(--font-size-lg);
+            margin-bottom: 1rem;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-list {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .file-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            animation: slideIn 0.3s ease;
+            border: 1px solid var(--light-dark);
+        }
+
+        .file-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .file-info {
+            flex: 1;
+        }
+
+        .file-name {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .file-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--gray);
+            font-size: var(--font-size-sm);
+        }
+
+        .file-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .file-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-weight: var(--font-weight-medium);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .file-btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .file-btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .file-btn-danger {
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        .file-btn-danger:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        .file-progress {
+            margin-top: 1rem;
+            width: 100%;
+            height: 8px;
+            background: var(--light-dark);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        .file-progress-bar {
+            height: 100%;
+            background: var(--primary-gradient);
+            border-radius: var(--radius-full);
+            transition: width 0.3s ease;
+        }
+
+        /* ========== معرض الملفات ========== */
+        .files-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .file-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-normal);
+            cursor: pointer;
+            border: 1px solid var(--light-dark);
+        }
+
+        .file-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .file-preview {
+            height: 150px;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-preview::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .file-details {
+            padding: 1.5rem;
+        }
+
+        .file-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .file-description {
+            color: var(--gray);
+            font-size: var(--font-size-sm);
+            margin-bottom: 0.5rem;
+        }
+
+        .file-metadata {
+            display: flex;
+            gap: 1rem;
+            color: var(--gray);
+            font-size: var(--font-size-xs);
+            margin-bottom: 1rem;
+        }
+
+        .file-download-btn {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: var(--radius-full);
+            background: var(--primary);
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .file-download-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* ========== شبكة الدروس المتطورة ========== */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .lesson-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition-normal);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-3xl);
+        }
+
+        .lesson-header {
+            height: 180px;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .lesson-type {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--secondary-gradient);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-bold);
+            z-index: 1;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .lesson-content {
+            padding: 2rem;
+        }
+
+        .lesson-title {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-teacher {
+            color: var(--secondary-dark);
+            font-size: var(--font-size-lg);
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--gray);
+            font-size: var(--font-size-sm);
+            margin: 1rem 0;
+        }
+
+        .lesson-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .lesson-btn {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .view-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .save-btn {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .save-btn:hover {
+            background: var(--secondary-light);
+            transform: translateY(-2px);
+        }
+
+        .save-btn.saved {
+            background: var(--success);
+            color: var(--white);
+        }
+
+        /* ========== صفحة القناة العملاقة ========== */
+        .channel-page {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius-3xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-3xl);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .channel-cover {
+            height: 300px;
+            background: var(--primary-gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-cover::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .channel-cover-content {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        .channel-cover-content h1 {
+            font-size: var(--font-size-4xl);
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-cover-content p {
+            font-size: var(--font-size-2xl);
+            opacity: 0.9;
+        }
+
+        .channel-avatar-large {
+            width: 180px;
+            height: 180px;
+            background: var(--white);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -90px;
+            right: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            border: 6px solid var(--secondary);
+            box-shadow: var(--shadow-3xl);
+            transition: var(--transition-bounce);
+            z-index: 2;
+        }
+
+        .channel-avatar-large:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .channel-info {
+            padding: 6rem 2rem 2rem;
+        }
+
+        .channel-name {
+            font-size: var(--font-size-4xl);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-specialty {
+            color: var(--secondary-dark);
+            font-size: var(--font-size-2xl);
+            margin-bottom: 1rem;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .channel-bio {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: var(--font-size-lg);
+        }
+
+        .channel-meta {
+            display: flex;
+            gap: 4rem;
+            margin: 2rem 0;
+        }
+
+        .channel-meta-item {
+            text-align: center;
+        }
+
+        .channel-meta-value {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-black);
+            color: var(--primary);
+        }
+
+        .channel-meta-label {
+            color: var(--gray);
+            font-size: var(--font-size-lg);
+        }
+
+        .channel-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .channel-btn {
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .channel-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .channel-btn-primary {
+            background: var(--primary-gradient);
+            color: var(--white);
+        }
+
+        .channel-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .channel-btn-secondary {
+            background: var(--secondary-gradient);
+            color: var(--primary);
+        }
+
+        .channel-btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .channel-tabs {
+            display: flex;
+            gap: 1rem;
+            padding: 0 2rem;
+            border-bottom: 2px solid var(--light-dark);
+            flex-wrap: wrap;
+        }
+
+        .channel-tab {
+            padding: 1rem 2.5rem;
+            border: none;
+            background: none;
+            color: var(--gray);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .channel-tab:hover {
+            color: var(--primary);
+        }
+
+        .channel-tab.active {
+            color: var(--primary);
+        }
+
+        .channel-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-gradient);
+        }
+
+        .channel-content {
+            padding: 2rem;
+        }
+
+        /* ========== إشعارات متطورة ========== */
+        .toast-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .toast {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--dark);
+            padding: 1.2rem 2rem;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-2xl);
+            border-right: 6px solid var(--success);
+            animation: slideInRight 0.3s ease;
+            min-width: 350px;
+            max-width: 450px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        .toast.success { border-right-color: var(--success); }
+        .toast.error { border-right-color: var(--danger); }
+        .toast.warning { border-right-color: var(--warning); }
+        .toast.info { border-right-color: var(--info); }
+
+        .toast i {
+            font-size: 2rem;
+        }
+
+        .toast.success i { color: var(--success); }
+        .toast.error i { color: var(--danger); }
+        .toast.warning i { color: var(--warning); }
+        .toast.info i { color: var(--info); }
+
+        .toast-content {
+            flex: 1;
+        }
+
+        .toast-title {
+            font-weight: var(--font-weight-bold);
+            margin-bottom: 0.3rem;
+        }
+
+        .toast-message {
+            color: var(--gray);
+            font-size: var(--font-size-sm);
+        }
+
+        /* ========== النافذة المنبثقة العملاقة ========== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 3rem;
+            border-radius: var(--radius-3xl);
+            position: relative;
+            animation: modalZoom 0.5s ease;
+            box-shadow: var(--shadow-3xl);
+        }
+
+        @keyframes modalZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-normal);
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: var(--danger);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        /* ========== نماذج الإدخال ========== */
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-lg);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid var(--light-dark);
+            border-radius: var(--radius-xl);
+            font-size: var(--font-size-md);
+            transition: var(--transition-fast);
+            font-family: var(--font-primary);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(30,60,114,0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background: var(--primary-gradient);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* ========== حالات عدم وجود بيانات ========== */
+        .no-data {
+            text-align: center;
+            padding: 4rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-3xl);
+            color: var(--white);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .no-data i {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.5;
+        }
+
+        .no-data h3 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: 0.5rem;
+        }
+
+        .no-data p {
+            opacity: 0.8;
+            font-size: var(--font-size-lg);
+        }
+
+        /* ========== اختيار نوع المستخدم ========== */
+        .user-type-selector {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .user-type-btn {
+            flex: 1;
+            padding: 1.2rem;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .user-type-btn:hover,
+        .user-type-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ========== روابط التواصل الاجتماعي ========== */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+            font-size: 1.5rem;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* ========== شريط التمرير المخصص ========== */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: var(--radius-full);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        }
+
+        /* ========== تحسينات الأداء ========== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ========== تحسينات الطباعة ========== */
+        @media print {
+            .navbar, .animated-bg, .toast-container, .modal {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+
+        /* ========== تحسينات التجاوب العملاقة ========== */
+        @media (max-width: 1400px) {
+            .dashboard { padding: 0 2rem; }
+            .welcome-title { font-size: var(--font-size-4xl); }
+        }
+
+        @media (max-width: 1200px) {
+            .dashboard { padding: 0 1.5rem; }
+            .welcome-title { font-size: var(--font-size-3xl); }
+            .channel-avatar-large { width: 150px; height: 150px; font-size: 5rem; bottom: -75px; }
+        }
+
+        @media (max-width: 992px) {
+            .channel-avatar-large {
+                right: 50%;
+                transform: translateX(50%);
+            }
+            .channel-info { text-align: center; }
+            .channel-meta { justify-content: center; }
+            .teachers-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 1rem; }
+            .search-grid { grid-template-columns: 1fr; }
+            .student-tabs { flex-direction: column; }
+            .tab-btn { width: 100%; }
+            .welcome-stats { flex-direction: column; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .teachers-grid { grid-template-columns: 1fr; }
+            .lessons-grid { grid-template-columns: 1fr; }
+            .files-gallery { grid-template-columns: 1fr; }
+            .channel-actions { flex-direction: column; }
+            .channel-tabs { flex-direction: column; }
+            .channel-tab { width: 100%; text-align: center; }
+            .modal-content { padding: 2rem; }
+            .toast { min-width: auto; width: 90%; }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-title { font-size: var(--font-size-2xl); }
+            .stat-card { padding: 1.5rem; }
+            .stat-icon { width: 60px; height: 60px; font-size: 2.5rem; }
+            .stat-value { font-size: 2rem; }
+            .teacher-avatar { width: 90px; height: 90px; font-size: 3rem; }
+            .teacher-name { font-size: var(--font-size-xl); }
+            .channel-avatar-large { width: 120px; height: 120px; font-size: 4rem; }
+            .channel-name { font-size: var(--font-size-2xl); }
+            .user-type-selector { flex-direction: column; }
+            .file-item { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- خلفية متحركة -->
+    <div class="animated-bg" id="animatedBg"></div>
+
+    <!-- شريط التحميل -->
+    <div class="loading-bar" id="loadingBar"></div>
+
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="App.goHome()">تعلّم<span>.ما</span></div>
+            <div class="nav-menu" id="navMenu"></div>
+        </div>
+    </nav>
+
+    <!-- لوحة التحكم -->
+    <div class="dashboard" id="dashboard"></div>
+
+    <!-- حاوية الإشعارات -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- النافذة المنبثقة -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="App.closeModal()"><i class="fas fa-times"></i></span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // ========== إعدادات التطبيق العملاقة ==========
+        const CONFIG = {
+            APP_NAME: 'تعلّم.ما',
+            APP_VERSION: '5.0.0',
+            DEFAULT_AVATARS: ['👨‍🏫', '👩‍🏫', '📚', '🔬', '📐', '⚡', '📝', '🌍', '🧪', '🎓', '🔭', '🧬', '🔮', '💡', '⭐'],
+            TOAST_DURATION: 3000,
+            MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB
+            ALLOWED_FILE_TYPES: ['application/pdf', 'image/jpeg', 'image/png', 'image/gif', 'video/mp4'],
+            MAX_FILES_PER_USER: 50
+        };
+
+        // ========== التطبيق العملاق ==========
+        const App = {
+            // ========== البيانات الأساسية ==========
+            teachers: [],
+            students: [],
+            lessons: [],
+            posts: [],
+            files: [],
+            currentUser: null,
+            viewingChannel: null,
+            selectedUserType: 'student',
+            filters: {
+                search: '',
+                level: '',
+                subject: '',
+                teacherName: ''
+            },
+            searchResults: {
+                teachers: [],
+                lessons: [],
+                files: []
+            },
+            currentFile: null,
+            uploadQueue: [],
+            
+            // ========== تهيئة ==========
+            init() {
+                this.loadData();
+                if (this.teachers.length === 0) this.addSampleTeachers();
+                if (this.students.length === 0) this.addSampleStudents();
+                if (this.lessons.length === 0) this.addSampleLessons();
+                if (this.posts.length === 0) this.addSamplePosts();
+                if (this.files.length === 0) this.addSampleFiles();
+                this.initAOS();
+                this.initAnimatedBg();
+                this.render();
+                
+                window.onclick = (e) => {
+                    if (e.target === document.getElementById('modal')) this.closeModal();
+                };
+            },
+            
+            initAOS() {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 800,
+                        once: true,
+                        offset: 100,
+                        disable: window.innerWidth < 768
+                    });
+                }
+            },
+            
+            loadData() {
+                this.teachers = JSON.parse(localStorage.getItem('teachers')) || [];
+                this.students = JSON.parse(localStorage.getItem('students')) || [];
+                this.lessons = JSON.parse(localStorage.getItem('lessons')) || [];
+                this.posts = JSON.parse(localStorage.getItem('posts')) || [];
+                this.files = JSON.parse(localStorage.getItem('files')) || [];
+                this.currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+            },
+            
+            saveAll() {
+                localStorage.setItem('teachers', JSON.stringify(this.teachers));
+                localStorage.setItem('students', JSON.stringify(this.students));
+                localStorage.setItem('lessons', JSON.stringify(this.lessons));
+                localStorage.setItem('posts', JSON.stringify(this.posts));
+                localStorage.setItem('files', JSON.stringify(this.files));
+                if (this.currentUser) {
+                    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+                }
+            },
+            
+            // ========== بيانات تجريبية موسعة ==========
+            addSampleTeachers() {
+                const sampleTeachers = [
+                    { id: 1, name: 'أحمد الفاسي', email: 'ahmed@teacher.com', password: '123456', specialty: 'الرياضيات', bio: 'أستاذ الرياضيات للبكالوريا - خبرة 15 سنة', avatar: '📐', rating: 4.8, followers: [], subjects: ['math'], levels: ['bac1', 'bac2'] },
+                    { id: 2, name: 'فاطمة المراكشي', email: 'fatima@teacher.com', password: '123456', specialty: 'الفيزياء', bio: 'دكتورة في الفيزياء النووية', avatar: '⚡', rating: 4.9, followers: [], subjects: ['physique'], levels: ['bac1', 'bac2'] },
+                    { id: 3, name: 'محمد البيضاوي', email: 'mohamed@teacher.com', password: '123456', specialty: 'العربية', bio: 'أستاذ اللغة العربية', avatar: '📝', rating: 4.7, followers: [], subjects: ['arabic'], levels: ['tronc', 'bac1'] },
+                    { id: 4, name: 'سعاد المغربية', email: 'souad@teacher.com', password: '123456', specialty: 'الفلسفة', bio: 'أستاذة الفلسفة', avatar: '📚', rating: 4.6, followers: [], subjects: ['philosophy'], levels: ['bac1', 'bac2'] }
+                ];
+                this.teachers.push(...sampleTeachers);
+                this.saveAll();
+            },
+            
+            addSampleStudents() {
+                const sampleStudents = [
+                    { id: 1, name: 'يوسف الطالبي', email: 'youssef@student.com', password: '123456', level: 'bac2', following: [], savedLessons: [], points: 150, streak: 5 },
+                    { id: 2, name: 'سارة العلمي', email: 'sara@student.com', password: '123456', level: 'bac1', following: [], savedLessons: [], points: 80, streak: 3 },
+                    { id: 3, name: 'عمر الحدادي', email: 'omar@student.com', password: '123456', level: 'bac2', following: [], savedLessons: [], points: 200, streak: 10 },
+                    { id: 4, name: 'ليلى المراكشي', email: 'laila@student.com', password: '123456', level: 'bac1', following: [], savedLessons: [], points: 120, streak: 7 }
+                ];
+                this.students.push(...sampleStudents);
+                this.saveAll();
+            },
+            
+            addSampleLessons() {
+                const sampleLessons = [
+                    { id: 101, title: 'المعادلات من الدرجة الأولى', description: 'شرح مبسط مع تمارين', teacherId: 1, teacherName: 'أحمد الفاسي', level: 'bac1', subject: 'math', date: '2024-02-20', views: 120, downloads: 45, fileId: 'f1' },
+                    { id: 102, title: 'قوانين نيوتن', description: 'شرح قوانين الحركة', teacherId: 2, teacherName: 'فاطمة المراكشي', level: 'bac2', subject: 'physique', date: '2024-02-21', views: 89, downloads: 32, fileId: 'f2' },
+                    { id: 103, title: 'النحو العربي', description: 'قواعد النحو', teacherId: 3, teacherName: 'محمد البيضاوي', level: 'bac1', subject: 'arabic', date: '2024-02-22', views: 67, downloads: 23, fileId: 'f3' }
+                ];
+                this.lessons.push(...sampleLessons);
+                this.saveAll();
+            },
+            
+            addSamplePosts() {
+                const samplePosts = [
+                    { id: 1001, teacherId: 1, teacherName: 'أحمد الفاسي', type: 'video', title: 'حل تمارين المعادلات', description: 'شرح مفصل', videoId: 'dQw4w9WgXcQ', date: '2024-03-01', views: 234, likes: 45 },
+                    { id: 1002, teacherId: 1, teacherName: 'أحمد الفاسي', type: 'text', title: 'ملخص الدوال', description: 'ملخص شامل', date: '2024-02-28', views: 156, likes: 23 },
+                    { id: 1003, teacherId: 2, teacherName: 'فاطمة المراكشي', type: 'video', title: 'تجارب فيزيائية', description: 'تجارب عملية', videoId: 'dQw4w9WgXcQ', date: '2024-02-27', views: 189, likes: 34 }
+                ];
+                this.posts.push(...samplePosts);
+                this.saveAll();
+            },
+            
+            addSampleFiles() {
+                const sampleFiles = [
+                    { id: 'f1', name: 'المعادلات.pdf', size: 2.5, type: 'pdf', uploadedBy: 1, date: '2024-02-20', downloads: 45 },
+                    { id: 'f2', name: 'نيوتن.pdf', size: 1.8, type: 'pdf', uploadedBy: 2, date: '2024-02-21', downloads: 32 },
+                    { id: 'f3', name: 'النحو.pdf', size: 3.2, type: 'pdf', uploadedBy: 3, date: '2024-02-22', downloads: 23 }
+                ];
+                this.files.push(...sampleFiles);
+                this.saveAll();
+            },
+            
+            // ========== دوال مساعدة ==========
+            toast(message, type = 'success', title = '') {
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', warning: 'fa-exclamation-triangle', info: 'fa-info-circle' };
+                toast.innerHTML = `
+                    <i class="fas ${icons[type]}"></i>
+                    <div class="toast-content">
+                        <div class="toast-title">${title || (type === 'success' ? 'نجاح' : type === 'error' ? 'خطأ' : type === 'warning' ? 'تحذير' : 'معلومة')}</div>
+                        <div class="toast-message">${message}</div>
+                    </div>
+                `;
+                document.getElementById('toastContainer').appendChild(toast);
+                setTimeout(() => {
+                    toast.style.animation = 'slideOutRight 0.3s ease';
+                    setTimeout(() => toast.remove(), 300);
+                }, CONFIG.TOAST_DURATION);
+            },
+            
+            showModal(content) {
+                document.getElementById('modalContent').innerHTML = content;
+                document.getElementById('modal').style.display = 'flex';
+            },
+            
+            closeModal() {
+                document.getElementById('modal').style.display = 'none';
+            },
+            
+            getLevelName(level) {
+                const levels = { 'premiere': 'الأولى إعدادي', 'deuxieme': 'الثانية إعدادي', 'troisieme': 'الثالثة إعدادي', 'tronc': 'جذع مشترك', 'bac1': 'الأولى باكالوريا', 'bac2': 'الثانية باكالوريا' };
+                return levels[level] || level;
+            },
+            
+            getSubjectName(subject) {
+                const subjects = { 'math': 'الرياضيات', 'physique': 'الفيزياء', 'chimie': 'الكيمياء', 'svt': 'علوم الحياة', 'philosophy': 'الفلسفة', 'arabic': 'العربية', 'french': 'الفرنسية', 'english': 'الإنجليزية' };
+                return subjects[subject] || subject;
+            },
+            
+            getRandomAvatar() {
+                return CONFIG.DEFAULT_AVATARS[Math.floor(Math.random() * CONFIG.DEFAULT_AVATARS.length)];
+            },
+            
+            formatFileSize(bytes) {
+                if (bytes < 1024) return bytes + ' B';
+                if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+                return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+            },
+            
+            // ========== نظام رفع الملفات ==========
+            initFileUpload() {
+                const dropArea = document.getElementById('dropArea');
+                if (!dropArea) return;
+                
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, preventDefaults, false);
+                });
+                
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, () => {
+                        dropArea.classList.add('dragover');
+                    }, false);
+                });
+                
+                ['dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, () => {
+                        dropArea.classList.remove('dragover');
+                    }, false);
+                });
+                
+                dropArea.addEventListener('drop', (e) => {
+                    const files = e.dataTransfer.files;
+                    this.handleFiles(files);
+                }, false);
+            },
+            
+            handleFiles(files) {
+                for (let file of files) {
+                    if (!CONFIG.ALLOWED_FILE_TYPES.includes(file.type)) {
+                        this.toast('نوع الملف غير مسموح به', 'error', 'خطأ');
+                        continue;
+                    }
+                    
+                    if (file.size > CONFIG.MAX_FILE_SIZE) {
+                        this.toast('حجم الملف كبير جداً', 'error', 'خطأ');
+                        continue;
+                    }
+                    
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const fileData = {
+                            id: 'file_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                            name: file.name,
+                            size: file.size,
+                            type: file.type,
+                            data: e.target.result,
+                            uploadedBy: this.currentUser?.id,
+                            uploadDate: new Date().toISOString(),
+                            downloads: 0
+                        };
+                        
+                        this.files.push(fileData);
+                        this.saveAll();
+                        this.toast('تم رفع الملف بنجاح', 'success', 'نجاح');
+                        this.renderFileList();
+                    };
+                    reader.readAsDataURL(file);
+                }
+            },
+            
+            triggerFileInput() {
+                document.getElementById('fileInput').click();
+            },
+            
+            handleFileSelect(e) {
+                this.handleFiles(e.target.files);
+            },
+            
+            renderFileList() {
+                const container = document.getElementById('fileList');
+                if (!container) return;
+                
+                const userFiles = this.files.filter(f => f.uploadedBy === this.currentUser?.id);
+                
+                if (userFiles.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--gray);">لا توجد ملفات مرفوعة</p>';
+                    return;
+                }
+                
+                container.innerHTML = userFiles.map(file => `
+                    <div class="file-item">
+                        <div class="file-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div class="file-info">
+                            <div class="file-name">${file.name}</div>
+                            <div class="file-meta">
+                                <span><i class="fas fa-weight-hanging"></i> ${this.formatFileSize(file.size)}</span>
+                                <span><i class="fas fa-calendar"></i> ${new Date(file.uploadDate).toLocaleDateString('ar-MA')}</span>
+                                <span><i class="fas fa-download"></i> ${file.downloads}</span>
+                            </div>
+                        </div>
+                        <div class="file-actions">
+                            <button class="file-btn file-btn-primary" onclick="App.downloadFile('${file.id}')">
+                                <i class="fas fa-download"></i> تحميل
+                            </button>
+                            <button class="file-btn file-btn-danger" onclick="App.deleteFile('${file.id}')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            },
+            
+            downloadFile(fileId) {
+                const file = this.files.find(f => f.id === fileId);
+                if (!file) return;
+                
+                file.downloads++;
+                this.saveAll();
+                
+                const link = document.createElement('a');
+                link.href = file.data;
+                link.download = file.name;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                this.toast('جاري تحميل الملف', 'info', 'تحميل');
+            },
+            
+            deleteFile(fileId) {
+                if (!confirm('هل أنت متأكد من حذف هذا الملف؟')) return;
+                
+                this.files = this.files.filter(f => f.id !== fileId);
+                this.saveAll();
+                this.toast('تم حذف الملف', 'success', 'نجاح');
+                this.renderFileList();
+            },
+            
+            // ========== واجهة المستخدم ==========
+            render() {
+                this.updateNavMenu();
+                
+                if (!this.currentUser) {
+                    this.showAuthModal();
+                    return;
+                }
+                
+                if (this.viewingChannel) {
+                    this.renderChannelPage(this.viewingChannel);
+                } else if (this.currentUser.type === 'teacher') {
+                    this.renderTeacherDashboard();
+                } else {
+                    this.renderStudentDashboard();
+                }
+            },
+            
+            updateNavMenu() {
+                const navMenu = document.getElementById('navMenu');
+                
+                if (this.currentUser) {
+                    navMenu.innerHTML = `
+                        <div class="user-badge">
+                            <i class="fas ${this.currentUser.type === 'teacher' ? 'fa-chalkboard-teacher' : 'fa-user-graduate'}"></i>
+                            <span>${this.currentUser.name}</span>
+                        </div>
+                        <button class="nav-btn" onclick="App.goHome()"><i class="fas fa-home"></i> الرئيسية</button>
+                        <button class="nav-btn" onclick="App.logout()"><i class="fas fa-sign-out-alt"></i> خروج</button>
+                    `;
+                } else {
+                    navMenu.innerHTML = `<button class="nav-btn" onclick="App.showAuthModal()"><i class="fas fa-sign-in-alt"></i> دخول</button>`;
+                }
+            },
+            
+            // ========== منطقة التلاميذ ==========
+            renderStudentDashboard() {
+                const student = this.students.find(s => s.id === this.currentUser.id);
+                if (!student) return;
+                
+                const dashboard = document.getElementById('dashboard');
+                dashboard.innerHTML = `
+                    <div class="welcome-card" data-aos="fade-up">
+                        <h1 class="welcome-title">مرحباً بك ${student.name} 👋</h1>
+                        <div class="welcome-stats">
+                            <div class="welcome-stat"><i class="fas fa-fire"></i> ${student.streak} يوم</div>
+                            <div class="welcome-stat"><i class="fas fa-star"></i> ${student.points} نقطة</div>
+                            <div class="welcome-stat"><i class="fas fa-graduation-cap"></i> ${this.getLevelName(student.level)}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        ${[
+                            ['fa-chalkboard-teacher', this.teachers.length, 'أستاذ', '+5'],
+                            ['fa-user-graduate', this.students.length, 'تلميذ', '+2'],
+                            ['fa-heart', student.following?.length || 0, 'متابعة', '+3'],
+                            ['fa-bookmark', student.savedLessons?.length || 0, 'محفوظ', '+1'],
+                            ['fa-file-pdf', this.files.length, 'ملف', '+10']
+                        ].map(([icon, value, label, trend]) => `
+                            <div class="stat-card" data-aos="fade-up">
+                                <div class="stat-icon"><i class="fas ${icon}"></i></div>
+                                <div class="stat-content">
+                                    <div class="stat-value">${value}</div>
+                                    <div class="stat-label">${label}</div>
+                                    <div class="stat-trend trend-up"><i class="fas fa-arrow-up"></i> ${trend} هذا الأسبوع</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="search-section">
+                        <div class="search-header">
+                            <h2><i class="fas fa-search"></i> بحث متقدم</h2>
+                            <span class="results-count">${this.teachers.length} أستاذ • ${this.lessons.length} درس • ${this.files.length} ملف</span>
+                        </div>
+                        <div class="search-grid">
+                            ${[
+                                ['fa-search', 'searchInput', 'بحث...'],
+                                ['fa-layer-group', 'levelFilter', 'المستوى', ['bac1', 'bac2']],
+                                ['fa-book', 'subjectFilter', 'المادة', ['math', 'physique', 'arabic', 'philosophy']],
+                                ['fa-user', 'teacherFilter', 'اسم الأستاذ...']
+                            ].map(([icon, id, placeholder, options]) => `
+                                <div class="search-input-group">
+                                    <i class="fas ${icon}"></i>
+                                    ${options ? `
+                                        <select id="${id}" class="search-input" onchange="App.searchContent()">
+                                            <option value="">${placeholder}</option>
+                                            ${options.map(o => `<option value="${o}">${this.getLevelName(o) || this.getSubjectName(o)}</option>`).join('')}
+                                        </select>
+                                    ` : `<input type="text" id="${id}" class="search-input" placeholder="${placeholder}" onkeyup="App.searchContent()">`}
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="active-filters" id="activeFilters"></div>
+                        <button class="search-btn" onclick="App.clearAllFilters()"><i class="fas fa-times"></i> مسح الكل</button>
+                    </div>
+                    
+                    <div class="student-tabs">
+                        ${[
+                            ['users', 'teachers', `جميع الأساتذة (${this.teachers.length})`],
+                            ['heart', 'following', `أساتذتي (${student.following?.length || 0})`],
+                            ['book', 'lessons', `كل الدروس (${this.lessons.length})`],
+                            ['bookmark', 'saved', `محفوظاتي (${student.savedLessons?.length || 0})`],
+                            ['file-pdf', 'files', `الملفات (${this.files.length})`]
+                        ].map(([icon, id, label]) => `
+                            <button class="tab-btn ${id === 'teachers' ? 'active' : ''}" onclick="App.showStudentTab('${id}')">
+                                <i class="fas fa-${icon}"></i> ${label}
+                            </button>
+                        `).join('')}
+                    </div>
+                    
+                    <div id="studentContent">${this.renderAllTeachers()}</div>
+                `;
+                
+                this.searchContent();
+            },
+            
+            renderAllTeachers() {
+                const student = this.students.find(s => s.id === this.currentUser?.id);
+                const teachersToShow = this.searchResults.teachers.length ? this.searchResults.teachers : this.teachers;
+                
+                if (!teachersToShow.length) return `<div class="no-data"><i class="fas fa-users"></i><h3>لا توجد نتائج</h3><p>جرب تغيير معايير البحث</p></div>`;
+                
+                return `<div class="teachers-grid">${teachersToShow.map(t => {
+                    const isFollowing = student?.following?.includes(t.id);
+                    return `
+                        <div class="teacher-card" onclick="App.viewTeacherChannel(${t.id})" data-aos="fade-up">
+                            <div class="teacher-header"></div>
+                            <div class="teacher-avatar">${t.avatar}</div>
+                            <div class="teacher-info">
+                                <h3 class="teacher-name">${t.name}</h3>
+                                <p class="teacher-specialty">${t.specialty}</p>
+                                <p class="teacher-bio">${t.bio.substring(0, 60)}...</p>
+                                <div class="teacher-stats">
+                                    <span class="stat-badge"><i class="fas fa-star"></i> ${t.rating}</span>
+                                    <span class="stat-badge"><i class="fas fa-book"></i> ${this.lessons.filter(l => l.teacherId === t.id).length}</span>
+                                </div>
+                                <button class="follow-btn ${isFollowing ? 'following' : ''}" onclick="event.stopPropagation(); App.toggleFollow(${t.id})">
+                                    <i class="fas ${isFollowing ? 'fa-check' : 'fa-plus'}"></i> ${isFollowing ? 'متابعة' : 'متابعة'}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}</div>`;
+            },
+            
+            renderFollowingTeachers() {
+                const student = this.students.find(s => s.id === this.currentUser.id);
+                const followingTeachers = this.teachers.filter(t => student.following?.includes(t.id));
+                if (!followingTeachers.length) return `<div class="no-data"><i class="fas fa-heart"></i><h3>لم تتابع أي أستاذ بعد</h3><p>تابع الأساتذة لمشاهدة دروسهم</p></div>`;
+                return `<div class="teachers-grid">${followingTeachers.map(t => `
+                    <div class="teacher-card" onclick="App.viewTeacherChannel(${t.id})">
+                        <div class="teacher-header"></div>
+                        <div class="teacher-avatar">${t.avatar}</div>
+                        <div class="teacher-info">
+                            <h3 class="teacher-name">${t.name}</h3>
+                            <p class="teacher-specialty">${t.specialty}</p>
+                            <button class="follow-btn following" onclick="event.stopPropagation(); App.toggleFollow(${t.id})">
+                                <i class="fas fa-check"></i> متابعة
+                            </button>
+                        </div>
+                    </div>
+                `).join('')}</div>`;
+            },
+            
+            renderAllLessons() {
+                const student = this.students.find(s => s.id === this.currentUser.id);
+                const lessonsToShow = this.searchResults.lessons.length ? this.searchResults.lessons : this.lessons;
+                if (!lessonsToShow.length) return `<div class="no-data"><i class="fas fa-book"></i><h3>لا توجد دروس</h3><p>ابحث عن دروس في المواد التي تهمك</p></div>`;
+                return `<div class="lessons-grid">${lessonsToShow.map(l => {
+                    const isSaved = student.savedLessons?.includes(l.id);
+                    return `
+                        <div class="lesson-card" data-aos="fade-up">
+                            <div class="lesson-header">📄<span class="lesson-type">PDF</span></div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">${l.title}</h3>
+                                <p class="lesson-teacher">${l.teacherName}</p>
+                                <div class="lesson-meta">
+                                    <span><i class="fas fa-layer-group"></i> ${this.getLevelName(l.level)}</span>
+                                    <span><i class="fas fa-eye"></i> ${l.views}</span>
+                                    <span><i class="fas fa-download"></i> ${l.downloads}</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <button class="lesson-btn view-btn" onclick="App.viewLesson(${l.id})"><i class="fas fa-eye"></i> عرض</button>
+                                    <button class="lesson-btn save-btn ${isSaved ? 'saved' : ''}" onclick="event.stopPropagation(); App.toggleSaveLesson(${l.id})">
+                                        <i class="fas ${isSaved ? 'fa-check' : 'fa-bookmark'}"></i> ${isSaved ? 'محفوظ' : 'حفظ'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}</div>`;
+            },
+            
+            renderSavedLessons() {
+                const student = this.students.find(s => s.id === this.currentUser.id);
+                const savedLessons = this.lessons.filter(l => student.savedLessons?.includes(l.id));
+                if (!savedLessons.length) return `<div class="no-data"><i class="fas fa-bookmark"></i><h3>لا توجد دروس محفوظة</h3><p>احفظ الدروس التي تهمك للعودة إليها</p></div>`;
+                return `<div class="lessons-grid">${savedLessons.map(l => `
+                    <div class="lesson-card">
+                        <div class="lesson-header">📄</div>
+                        <div class="lesson-content">
+                            <h3 class="lesson-title">${l.title}</h3>
+                            <p class="lesson-teacher">${l.teacherName}</p>
+                            <button class="lesson-btn view-btn" onclick="App.viewLesson(${l.id})">عرض</button>
+                        </div>
+                    </div>
+                `).join('')}</div>`;
+            },
+            
+            renderAllFiles() {
+                const filesToShow = this.searchResults.files.length ? this.searchResults.files : this.files;
+                if (!filesToShow.length) return `<div class="no-data"><i class="fas fa-file-pdf"></i><h3>لا توجد ملفات</h3><p>ابحث عن الملفات التي تحتاجها</p></div>`;
+                
+                return `<div class="files-gallery">${filesToShow.map(f => {
+                    const uploader = this.teachers.find(t => t.id === f.uploadedBy) || { name: 'غير معروف' };
+                    return `
+                        <div class="file-card">
+                            <div class="file-preview"><i class="fas fa-file-pdf"></i></div>
+                            <div class="file-details">
+                                <div class="file-title">${f.name}</div>
+                                <div class="file-description">تم الرفع بواسطة: ${uploader.name}</div>
+                                <div class="file-metadata">
+                                    <span><i class="fas fa-weight-hanging"></i> ${this.formatFileSize(f.size)}</span>
+                                    <span><i class="fas fa-calendar"></i> ${new Date(f.uploadDate).toLocaleDateString('ar-MA')}</span>
+                                    <span><i class="fas fa-download"></i> ${f.downloads}</span>
+                                </div>
+                                <button class="file-download-btn" onclick="App.downloadFile('${f.id}')">
+                                    <i class="fas fa-download"></i> تحميل
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}</div>`;
+            },
+            
+            showStudentTab(tab) {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                event.target.classList.add('active');
+                document.getElementById('studentContent').innerHTML = {
+                    'teachers': this.renderAllTeachers(),
+                    'following': this.renderFollowingTeachers(),
+                    'lessons': this.renderAllLessons(),
+                    'saved': this.renderSavedLessons(),
+                    'files': this.renderAllFiles()
+                }[tab];
+            },
+            
+            // ========== نظام البحث ==========
+            searchContent() {
+                const s = document.getElementById('searchInput')?.value?.toLowerCase() || '';
+                const l = document.getElementById('levelFilter')?.value || '';
+                const sub = document.getElementById('subjectFilter')?.value || '';
+                const tn = document.getElementById('teacherFilter')?.value?.toLowerCase() || '';
+                
+                this.filters = { search: s, level: l, subject: sub, teacherName: tn };
+                
+                this.searchResults.teachers = this.teachers.filter(t => {
+                    let m = true;
+                    if (s) m = m && (t.name.toLowerCase().includes(s) || t.specialty.toLowerCase().includes(s));
+                    if (l) m = m && t.levels?.includes(l);
+                    if (sub) m = m && t.subjects?.includes(sub);
+                    if (tn) m = m && t.name.toLowerCase().includes(tn);
+                    return m;
+                });
+                
+                this.searchResults.lessons = this.lessons.filter(l => {
+                    let m = true;
+                    if (s) m = m && (l.title.toLowerCase().includes(s) || l.description.toLowerCase().includes(s));
+                    if (l) m = m && l.level === l;
+                    if (sub) m = m && l.subject === sub;
+                    return m;
+                });
+                
+                this.searchResults.files = this.files.filter(f => {
+                    let m = true;
+                    if (s) m = m && f.name.toLowerCase().includes(s);
+                    return m;
+                });
+                
+                const countEl = document.querySelector('.results-count');
+                if (countEl) {
+                    countEl.innerHTML = `${this.searchResults.teachers.length} أستاذ • ${this.searchResults.lessons.length} درس • ${this.searchResults.files.length} ملف`;
+                }
+                
+                this.showActiveFilters();
+            },
+            
+            showActiveFilters() {
+                const c = document.getElementById('activeFilters');
+                if (!c) return;
+                c.innerHTML = Object.entries(this.filters).filter(([_, v]) => v).map(([k, v]) => `
+                    <div class="filter-tag"><i class="fas ${k === 'search' ? 'fa-search' : k === 'level' ? 'fa-layer-group' : k === 'subject' ? 'fa-book' : 'fa-user'}"></i> ${v}<button onclick="App.removeFilter('${k}')">&times;</button></div>
+                `).join('');
+            },
+            
+            removeFilter(f) {
+                this.filters[f] = '';
+                document.getElementById({ search: 'searchInput', level: 'levelFilter', subject: 'subjectFilter', teacherName: 'teacherFilter' }[f]).value = '';
+                this.searchContent();
+            },
+            
+            clearAllFilters() {
+                this.filters = { search: '', level: '', subject: '', teacherName: '' };
+                ['searchInput', 'levelFilter', 'subjectFilter', 'teacherFilter'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.value = '';
+                });
+                this.searchContent();
+            },
+            
+            // ========== تفاعلات التلميذ ==========
+            toggleFollow(teacherId) {
+                const student = this.students.find(s => s.id === this.currentUser.id);
+                const teacher = this.teachers.find(t => t.id === teacherId);
+                
+                if (!student.following) student.following = [];
+                
+                if (student.following.includes(teacherId)) {
+                    student.following = student.following.filter(id => id !== teacherId);
+                    teacher.followers = teacher.followers?.filter(id => id !== student.id) || [];
+                    this.toast('تم إلغاء المتابعة', 'info');
+                } else {
+                    student.following.push(teacherId);
+                    if (!teacher.followers) teacher.followers = [];
+                    teacher.followers.push(student.id);
+                    student.points += 10;
+                    this.toast('تمت المتابعة +10 نقاط', 'success');
+                }
+                
+                this.saveAll();
+                const activeTab = document.querySelector('.tab-btn.active')?.textContent || '';
+                activeTab.includes('أساتذتي') ? this.showStudentTab('following') : this.showStudentTab('teachers');
+            },
+            
+            toggleSaveLesson(lessonId) {
+                const student = this.students.find(s => s.id === this.currentUser.id);
+                if (!student.savedLessons) student.savedLessons = [];
+                
+                if (student.savedLessons.includes(lessonId)) {
+                    student.savedLessons = student.savedLessons.filter(id => id !== lessonId);
+                    this.toast('تم إزالة الدرس', 'info');
+                } else {
+                    student.savedLessons.push(lessonId);
+                    student.points += 5;
+                    this.toast('تم حفظ الدرس +5 نقاط', 'success');
+                }
+                
+                this.saveAll();
+                const activeTab = document.querySelector('.tab-btn.active')?.textContent || '';
+                activeTab.includes('محفوظاتي') ? this.showStudentTab('saved') : this.showStudentTab('lessons');
+            },
+            
+            viewLesson(lessonId) {
+                const lesson = this.lessons.find(l => l.id === lessonId);
+                lesson.views += 1;
+                this.saveAll();
+                
+                const file = lesson.fileId ? this.files.find(f => f.id === lesson.fileId) : null;
+                
+                this.showModal(`
+                    <h2 style="color: var(--primary);">${lesson.title}</h2>
+                    <p style="margin: 1rem 0;">${lesson.description}</p>
+                    <div style="background: var(--light); padding: 1.5rem; border-radius: var(--radius-xl);">
+                        <p><strong>الأستاذ:</strong> ${lesson.teacherName}</p>
+                        <p><strong>المستوى:</strong> ${this.getLevelName(lesson.level)}</p>
+                        <p><strong>المادة:</strong> ${this.getSubjectName(lesson.subject)}</p>
+                        <p><strong>المشاهدات:</strong> ${lesson.views}</p>
+                        <p><strong>التحميلات:</strong> ${lesson.downloads}</p>
+                    </div>
+                    ${file ? `
+                        <div style="margin-top: 2rem;">
+                            <button class="submit-btn" onclick="App.downloadFile('${file.id}')">
+                                <i class="fas fa-download"></i> تحميل الملف
+                            </button>
+                        </div>
+                    ` : ''}
+                `);
+            },
+            
+            // ========== صفحة قناة الأستاذ ==========
+            viewTeacherChannel(teacherId) {
+                this.viewingChannel = teacherId;
+                const teacher = this.teachers.find(t => t.id === teacherId);
+                const student = this.students.find(s => s.id === this.currentUser?.id);
+                const isFollowing = student?.following?.includes(teacherId) || false;
+                const teacherLessons = this.lessons.filter(l => l.teacherId === teacherId);
+                const teacherPosts = this.posts.filter(p => p.teacherId === teacherId);
+                const teacherFiles = this.files.filter(f => f.uploadedBy === teacherId);
+                
+                document.getElementById('dashboard').innerHTML = `
+                    <div class="channel-page">
+                        <div class="channel-cover">
+                            <div class="channel-avatar-large">${teacher.avatar}</div>
+                            <div class="channel-cover-content"><h1>${teacher.name}</h1><p>${teacher.specialty}</p></div>
+                        </div>
+                        <div class="channel-info">
+                            <h1 class="channel-name">${teacher.name}</h1>
+                            <p class="channel-specialty">${teacher.specialty}</p>
+                            <p class="channel-bio">${teacher.bio}</p>
+                            <div class="channel-meta">
+                                <div class="channel-meta-item"><div class="channel-meta-value">${teacher.followers?.length || 0}</div><div class="channel-meta-label">متابع</div></div>
+                                <div class="channel-meta-item"><div class="channel-meta-value">${teacherPosts.length}</div><div class="channel-meta-label">منشور</div></div>
+                                <div class="channel-meta-item"><div class="channel-meta-value">${teacherLessons.length}</div><div class="channel-meta-label">درس</div></div>
+                                <div class="channel-meta-item"><div class="channel-meta-value">${teacherFiles.length}</div><div class="channel-meta-label">ملف</div></div>
+                            </div>
+                            <div class="channel-actions">
+                                ${this.currentUser?.type === 'student' ? `
+                                    <button class="channel-btn channel-btn-primary" onclick="App.toggleFollow(${teacher.id})">
+                                        <i class="fas ${isFollowing ? 'fa-check' : 'fa-plus'}"></i> ${isFollowing ? 'متابعة' : 'متابعة'}
+                                    </button>
+                                ` : this.currentUser?.id === teacher.id ? `
+                                    <button class="channel-btn channel-btn-primary" onclick="App.showAddPostForm()"><i class="fas fa-plus"></i> إضافة منشور</button>
+                                    <button class="channel-btn channel-btn-secondary" onclick="App.showAddLessonForm()"><i class="fas fa-book"></i> إضافة درس</button>
+                                    <button class="channel-btn channel-btn-secondary" onclick="App.showUploadFileForm()"><i class="fas fa-upload"></i> رفع ملف</button>
+                                ` : ''}
+                                <button class="channel-btn channel-btn-secondary" onclick="App.goHome()"><i class="fas fa-arrow-right"></i> رجوع</button>
+                            </div>
+                        </div>
+                        <div class="channel-tabs">
+                            <button class="channel-tab active" onclick="App.showChannelTab('posts')"><i class="fas fa-newspaper"></i> المنشورات</button>
+                            <button class="channel-tab" onclick="App.showChannelTab('lessons')"><i class="fas fa-book"></i> الدروس</button>
+                            <button class="channel-tab" onclick="App.showChannelTab('files')"><i class="fas fa-file-pdf"></i> الملفات</button>
+                            <button class="channel-tab" onclick="App.showChannelTab('about')"><i class="fas fa-info-circle"></i> حول</button>
+                        </div>
+                        <div class="channel-content" id="channelContent">${this.renderChannelPosts(teacherPosts)}</div>
+                    </div>
+                `;
+            },
+            
+            renderChannelPosts(posts) {
+                if (!posts.length) return `<p style="text-align: center; color: var(--gray);">لا توجد منشورات بعد</p>`;
+                return `<div class="posts-grid">${posts.map(p => `
+                    <div class="post-card"><h3 class="post-title">${p.title}</h3><div class="post-meta">📅 ${p.date}</div><div class="post-content">${p.description}</div></div>
+                `).join('')}</div>`;
+            },
+            
+            showChannelTab(tab) {
+                const teacher = this.teachers.find(t => t.id === this.viewingChannel);
+                document.querySelectorAll('.channel-tab').forEach(b => b.classList.remove('active'));
+                event.target.classList.add('active');
+                document.getElementById('channelContent').innerHTML = {
+                    'posts': this.renderChannelPosts(this.posts.filter(p => p.teacherId === teacher.id)),
+                    'lessons': `<div class="lessons-grid">${this.lessons.filter(l => l.teacherId === teacher.id).map(l => `
+                        <div class="lesson-card"><h3>${l.title}</h3><p>${l.description}</p></div>
+                    `).join('')}</div>`,
+                    'files': `<div class="files-gallery">${this.files.filter(f => f.uploadedBy === teacher.id).map(f => `
+                        <div class="file-card">
+                            <div class="file-preview"><i class="fas fa-file-pdf"></i></div>
+                            <div class="file-details">
+                                <div class="file-title">${f.name}</div>
+                                <button class="file-download-btn" onclick="App.downloadFile('${f.id}')">تحميل</button>
+                            </div>
+                        </div>
+                    `).join('')}</div>`,
+                    'about': `<h3>عن الأستاذ</h3><p>${teacher.bio}</p><h3>المواد</h3><p>${teacher.subjects?.map(s => this.getSubjectName(s)).join(' - ')}</p>`
+                }[tab];
+            },
+            
+            // ========== لوحة تحكم الأستاذ ==========
+            renderTeacherDashboard() {
+                const teacher = this.teachers.find(t => t.id === this.currentUser.id);
+                const teacherLessons = this.lessons.filter(l => l.teacherId === teacher.id);
+                const teacherPosts = this.posts.filter(p => p.teacherId === teacher.id);
+                const teacherFiles = this.files.filter(f => f.uploadedBy === teacher.id);
+                
+                document.getElementById('dashboard').innerHTML = `
+                    <div class="welcome-card"><h1>مرحباً بك أ. ${teacher.name} 👨‍🏫</h1><p>${teacher.bio}</p></div>
+                    
+                    <div class="stats-grid">
+                        ${[
+                            ['users', teacher.followers?.length || 0, 'متابع'],
+                            ['newspaper', teacherPosts.length, 'منشور'],
+                            ['book', teacherLessons.length, 'درس'],
+                            ['file-pdf', teacherFiles.length, 'ملف'],
+                            ['star', teacher.rating, 'تقييم']
+                        ].map(([icon, value, label]) => `
+                            <div class="stat-card"><div class="stat-icon"><i class="fas fa-${icon}"></i></div><div class="stat-content"><div class="stat-value">${value}</div><div class="stat-label">${label}</div></div></div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="file-upload-section">
+                        <h2 style="color: var(--primary); margin-bottom: 2rem;"><i class="fas fa-cloud-upload-alt"></i> رفع ملفات</h2>
+                        <div class="file-upload-area" id="dropArea" onclick="App.triggerFileInput()">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>اسحب وأفلت الملفات هنا</h3>
+                            <p>أو اضغط لاختيار ملفات</p>
+                            <p style="font-size: var(--font-size-sm); color: var(--gray);">يدعم PDF, صور, فيديو (حد أقصى 10MB)</p>
+                            <input type="file" id="fileInput" class="file-input" multiple onchange="App.handleFileSelect(event)">
+                        </div>
+                        <div id="fileList" class="file-list"></div>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.95); padding: 2rem; border-radius: var(--radius-2xl); margin-top: 2rem;">
+                        <h2 style="color: var(--primary);">إجراءات سريعة</h2>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button class="nav-btn" style="background: var(--primary); color: white;" onclick="App.viewTeacherChannel(${teacher.id})"><i class="fas fa-eye"></i> عرض قناتي</button>
+                            <button class="nav-btn" style="background: var(--secondary); color: var(--primary);" onclick="App.showAddPostForm()"><i class="fas fa-plus"></i> إضافة منشور</button>
+                            <button class="nav-btn" style="background: var(--secondary); color: var(--primary);" onclick="App.showAddLessonForm()"><i class="fas fa-book"></i> إضافة درس</button>
+                        </div>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    this.initFileUpload();
+                    this.renderFileList();
+                }, 100);
+            },
+            
+            showAddPostForm() {
+                this.showModal(`
+                    <h2 style="color: var(--primary);">إضافة منشور جديد</h2>
+                    <div class="form-group"><label>العنوان</label><input type="text" id="postTitle"></div>
+                    <div class="form-group"><label>المحتوى</label><textarea id="postDesc" rows="5"></textarea></div>
+                    <button class="submit-btn" onclick="App.addNewPost()">نشر</button>
+                `);
+            },
+            
+            addNewPost() {
+                const title = document.getElementById('postTitle')?.value;
+                const desc = document.getElementById('postDesc')?.value;
+                if (!title || !desc) { this.toast('الرجاء ملء جميع الحقول', 'error'); return; }
+                
+                const teacher = this.teachers.find(t => t.id === this.currentUser.id);
+                this.posts.push({
+                    id: Date.now(), teacherId: teacher.id, teacherName: teacher.name,
+                    type: 'text', title, description: desc, date: new Date().toISOString().split('T')[0],
+                    views: 0, likes: 0
+                });
+                this.saveAll();
+                this.closeModal();
+                this.viewTeacherChannel(teacher.id);
+                this.toast('✅ تم نشر المنشور', 'success');
+            },
+            
+            showAddLessonForm() {
+                this.showModal(`
+                    <h2 style="color: var(--primary);">إضافة درس جديد</h2>
+                    <div class="form-group"><label>العنوان</label><input type="text" id="lessonTitle"></div>
+                    <div class="form-group"><label>الوصف</label><textarea id="lessonDesc" rows="5"></textarea></div>
+                    <div class="form-group"><label>المستوى</label><select id="lessonLevel"><option value="bac1">الأولى باكالوريا</option><option value="bac2">الثانية باكالوريا</option></select></div>
+                    <div class="form-group"><label>المادة</label><select id="lessonSubject"><option value="math">الرياضيات</option><option value="physique">الفيزياء</option><option value="arabic">العربية</option></select></div>
+                    <div class="form-group"><label>اختر ملف</label><select id="lessonFile">
+                        <option value="">بدون ملف</option>
+                        ${this.files.filter(f => f.uploadedBy === this.currentUser.id).map(f => `<option value="${f.id}">${f.name}</option>`).join('')}
+                    </select></div>
+                    <button class="submit-btn" onclick="App.addNewLesson()">نشر</button>
+                `);
+            },
+            
+            addNewLesson() {
+                const title = document.getElementById('lessonTitle')?.value;
+                const desc = document.getElementById('lessonDesc')?.value;
+                const level = document.getElementById('lessonLevel')?.value;
+                const subject = document.getElementById('lessonSubject')?.value;
+                const fileId = document.getElementById('lessonFile')?.value;
+                
+                if (!title || !desc) { this.toast('الرجاء ملء جميع الحقول', 'error'); return; }
+                
+                const teacher = this.teachers.find(t => t.id === this.currentUser.id);
+                this.lessons.push({
+                    id: Date.now(), title, description: desc, level, subject,
+                    teacherId: teacher.id, teacherName: teacher.name,
+                    date: new Date().toISOString().split('T')[0], views: 0, downloads: 0,
+                    fileId: fileId || null
+                });
+                this.saveAll();
+                this.closeModal();
+                this.viewTeacherChannel(teacher.id);
+                this.toast('✅ تم نشر الدرس', 'success');
+            },
+            
+            showUploadFileForm() {
+                this.showModal(`
+                    <h2 style="color: var(--primary);">رفع ملف جديد</h2>
+                    <div class="file-upload-area" onclick="document.getElementById('modalFileInput').click()">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>اختر ملف للرفع</h3>
+                        <input type="file" id="modalFileInput" class="file-input" onchange="App.handleModalFileSelect(event)">
+                    </div>
+                `);
+            },
+            
+            handleModalFileSelect(e) {
+                this.handleFiles(e.target.files);
+                this.closeModal();
+            },
+            
+            // ========== المصادقة ==========
+            showAuthModal() {
+                this.showModal(`
+                    <h2 style="color: var(--primary); text-align: center;">مرحباً بك في تعلّم.ما</h2>
+                    <div class="user-type-selector">
+                        <button class="user-type-btn ${this.selectedUserType === 'student' ? 'active' : ''}" onclick="App.selectUserType('student')"><i class="fas fa-user-graduate"></i> تلميذ</button>
+                        <button class="user-type-btn ${this.selectedUserType === 'teacher' ? 'active' : ''}" onclick="App.selectUserType('teacher')"><i class="fas fa-chalkboard-teacher"></i> أستاذ</button>
+                    </div>
+                    <div class="form-group"><input type="email" id="loginEmail" placeholder="البريد الإلكتروني"></div>
+                    <div class="form-group"><input type="password" id="loginPassword" placeholder="كلمة السر"></div>
+                    <button class="submit-btn" onclick="App.handleLogin()">دخول</button>
+                    <button class="nav-btn" style="width:100%; margin-top:1rem;" onclick="App.showRegisterForm()">تسجيل جديد</button>
+                `);
+            },
+            
+            showRegisterForm() {
+                this.showModal(`
+                    <h2 style="color: var(--primary); text-align: center;">تسجيل جديد</h2>
+                    <div class="form-group"><input type="text" id="regName" placeholder="الاسم الكامل"></div>
+                    <div class="form-group"><input type="email" id="regEmail" placeholder="البريد الإلكتروني"></div>
+                    <div class="form-group"><input type="password" id="regPassword" placeholder="كلمة السر"></div>
+                    ${this.selectedUserType === 'teacher' ? `
+                        <div class="form-group"><input type="text" id="regSpecialty" placeholder="الاختصاص"></div>
+                        <div class="form-group"><textarea id="regBio" rows="3" placeholder="نبذة عنك"></textarea></div>
+                    ` : ''}
+                    <button class="submit-btn" onclick="App.handleRegister()">تسجيل</button>
+                `);
+            },
+            
+            selectUserType(type) {
+                this.selectedUserType = type;
+                document.querySelectorAll('.user-type-btn').forEach(b => b.classList.remove('active'));
+                event.target.classList.add('active');
+            },
+            
+            handleLogin() {
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                
+                let user;
+                if (this.selectedUserType === 'teacher') {
+                    user = this.teachers.find(t => t.email === email && t.password === password);
+                } else {
+                    user = this.students.find(s => s.email === email && s.password === password);
+                }
+                
+                if (user) {
+                    this.currentUser = { id: user.id, name: user.name, type: this.selectedUserType };
+                    this.saveAll();
+                    this.closeModal();
+                    this.render();
+                    this.toast('مرحباً بك', 'success');
+                } else {
+                    this.toast('خطأ في البريد أو كلمة السر', 'error');
+                }
+            },
+            
+            handleRegister() {
+                const name = document.getElementById('regName').value;
+                const email = document.getElementById('regEmail').value;
+                const password = document.getElementById('regPassword').value;
+                
+                if (!name || !email || !password) {
+                    this.toast('الرجاء ملء جميع الحقول', 'error');
+                    return;
+                }
+                
+                if (this.selectedUserType === 'teacher') {
+                    if (this.teachers.find(t => t.email === email)) {
+                        this.toast('البريد موجود مسبقاً', 'error');
+                        return;
+                    }
+                    
+                    const specialty = document.getElementById('regSpecialty')?.value || 'أستاذ';
+                    const bio = document.getElementById('regBio')?.value || 'أستاذ جديد';
+                    
+                    const newTeacher = {
+                        id: Date.now(), name, email, password, specialty, bio,
+                        avatar: this.getRandomAvatar(), rating: 0, followers: [], subjects: [], levels: []
+                    };
+                    
+                    this.teachers.push(newTeacher);
+                    this.currentUser = { id: newTeacher.id, name, type: 'teacher' };
+                    
+                } else {
+                    if (this.students.find(s => s.email === email)) {
+                        this.toast('البريد موجود مسبقاً', 'error');
+                        return;
+                    }
+                    
+                    const newStudent = {
+                        id: Date.now(), name, email, password, level: 'bac1',
+                        following: [], savedLessons: [], points: 0, streak: 0
+                    };
+                    
+                    this.students.push(newStudent);
+                    this.currentUser = { id: newStudent.id, name, type: 'student' };
+                }
+                
+                this.saveAll();
+                this.closeModal();
+                this.render();
+                this.toast('تم التسجيل بنجاح', 'success');
+            },
+            
+            logout() {
+                this.currentUser = null;
+                this.viewingChannel = null;
+                localStorage.removeItem('currentUser');
+                this.render();
+                this.toast('تم تسجيل الخروج', 'info');
+            },
+            
+            goHome() {
+                this.viewingChannel = null;
+                this.render();
+            },
+            
+            // ========== خلفية متحركة ==========
+            initAnimatedBg() {
+                const bg = document.getElementById('animatedBg');
+                for (let i = 0; i < 30; i++) {
+                    const span = document.createElement('span');
+                    span.style.left = Math.random() * 100 + '%';
+                    span.style.width = Math.random() * 30 + 10 + 'px';
+                    span.style.height = span.style.width;
+                    span.style.animationDuration = Math.random() * 30 + 15 + 's';
+                    span.style.animationDelay = Math.random() * 15 + 's';
+                    bg.appendChild(span);
+                }
+            }
+        };
+
+        // ========== تشغيل التطبيق ==========
+        App.init();
+    </script>
+</body>
+</html>
