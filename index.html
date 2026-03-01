@@ -16,11 +16,8 @@
     <!-- AOS للأنيميشن -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Chart.js للرسوم البيانية -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
     <style>
-        /* ========== متغيرات متقدمة جداً ========== */
+        /* جميع الأنماط كما هي من النسخة العملاقة */
         :root {
             --primary: #1e3c72;
             --primary-light: #2a5298;
@@ -33,20 +30,14 @@
             --secondary-gradient: linear-gradient(135deg, #ffd700, #ffed4a, #ffd700);
             
             --success: #28a745;
-            --success-light: #d4edda;
             --danger: #dc3545;
-            --danger-light: #f8d7da;
             --warning: #ffc107;
-            --warning-light: #fff3cd;
             --info: #17a2b8;
-            --info-light: #d1ecf1;
             
             --dark: #343a40;
-            --dark-light: #6c757d;
             --light: #f8f9fa;
             --light-dark: #e9ecef;
             --gray: #6c757d;
-            --gray-light: #adb5bd;
             --white: #ffffff;
             
             --shadow-xs: 0 2px 4px rgba(0,0,0,0.05);
@@ -91,10 +82,8 @@
             --font-weight-black: 900;
         }
 
-        /* ========== إعادة تعيين متقدمة ========== */
-        *,
-        *::before,
-        *::after {
+        /* باقي الأنماط كما هي من النسخة العملاقة */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -117,7 +106,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ========== خلفية متحركة محسنة ========== */
         .animated-bg {
             position: fixed;
             top: 0;
@@ -151,7 +139,6 @@
             }
         }
 
-        /* ========== شريط التحميل ========== */
         .loading-bar {
             position: fixed;
             top: 0;
@@ -169,7 +156,6 @@
             transform: scaleX(1);
         }
 
-        /* ========== الشريط العلوي العملاق ========== */
         .navbar {
             background: rgba(30, 60, 114, 0.95);
             backdrop-filter: blur(10px);
@@ -290,7 +276,6 @@
             transform: translateY(-2px);
         }
 
-        /* ========== لوحة التحكم الرئيسية ========== */
         .dashboard {
             max-width: 1400px;
             margin: 2rem auto;
@@ -299,7 +284,6 @@
             z-index: 1;
         }
 
-        /* ========== بطاقة الترحيب الفائقة ========== */
         .welcome-card {
             background: linear-gradient(135deg, rgba(30,60,114,0.95), rgba(15,43,79,0.98));
             backdrop-filter: blur(10px);
@@ -390,7 +374,6 @@
             transform: translateY(-2px) scale(1.05);
         }
 
-        /* ========== شبكة الإحصائيات العملاقة ========== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -491,7 +474,6 @@
             color: var(--danger);
         }
 
-        /* ========== نظام البحث العملاق ========== */
         .search-section {
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
@@ -589,7 +571,6 @@
             box-shadow: var(--shadow-2xl);
         }
 
-        /* ========== الفلاتر النشطة ========== */
         .active-filters {
             display: flex;
             flex-wrap: wrap;
@@ -638,7 +619,6 @@
             transform: scale(1.2);
         }
 
-        /* ========== أقسام التلميذ ========== */
         .student-tabs {
             display: flex;
             gap: 1rem;
@@ -676,7 +656,6 @@
             border-color: var(--secondary);
         }
 
-        /* ========== شبكة الأساتذة العملاقة ========== */
         .teachers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -875,7 +854,6 @@
             background: var(--success);
         }
 
-        /* ========== نظام رفع الملفات المتطور ========== */
         .file-upload-section {
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
@@ -1025,23 +1003,6 @@
             transform: translateY(-2px);
         }
 
-        .file-progress {
-            margin-top: 1rem;
-            width: 100%;
-            height: 8px;
-            background: var(--light-dark);
-            border-radius: var(--radius-full);
-            overflow: hidden;
-        }
-
-        .file-progress-bar {
-            height: 100%;
-            background: var(--primary-gradient);
-            border-radius: var(--radius-full);
-            transition: width 0.3s ease;
-        }
-
-        /* ========== معرض الملفات ========== */
         .files-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -1132,7 +1093,6 @@
             transform: translateY(-2px);
         }
 
-        /* ========== شبكة الدروس المتطورة ========== */
         .lessons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -1263,7 +1223,6 @@
             color: var(--white);
         }
 
-        /* ========== صفحة القناة العملاقة ========== */
         .channel-page {
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
@@ -1480,7 +1439,6 @@
             padding: 2rem;
         }
 
-        /* ========== إشعارات متطورة ========== */
         .toast-container {
             position: fixed;
             bottom: 30px;
@@ -1559,7 +1517,6 @@
             font-size: var(--font-size-sm);
         }
 
-        /* ========== النافذة المنبثقة العملاقة ========== */
         .modal {
             display: none;
             position: fixed;
@@ -1622,7 +1579,6 @@
             transform: rotate(90deg);
         }
 
-        /* ========== نماذج الإدخال ========== */
         .form-group {
             margin-bottom: 2rem;
         }
@@ -1675,7 +1631,6 @@
             box-shadow: var(--shadow-2xl);
         }
 
-        /* ========== حالات عدم وجود بيانات ========== */
         .no-data {
             text-align: center;
             padding: 4rem;
@@ -1703,7 +1658,6 @@
             font-size: var(--font-size-lg);
         }
 
-        /* ========== اختيار نوع المستخدم ========== */
         .user-type-selector {
             display: flex;
             gap: 1.5rem;
@@ -1736,7 +1690,6 @@
             box-shadow: var(--shadow-lg);
         }
 
-        /* ========== روابط التواصل الاجتماعي ========== */
         .social-links {
             display: flex;
             gap: 1rem;
@@ -1763,7 +1716,6 @@
             transform: translateY(-3px) scale(1.1);
         }
 
-        /* ========== شريط التمرير المخصص ========== */
         ::-webkit-scrollbar {
             width: 12px;
         }
@@ -1781,7 +1733,6 @@
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
         }
 
-        /* ========== تحسينات الأداء ========== */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -1790,7 +1741,6 @@
             }
         }
 
-        /* ========== تحسينات الطباعة ========== */
         @media print {
             .navbar, .animated-bg, .toast-container, .modal {
                 display: none !important;
@@ -1802,7 +1752,6 @@
             }
         }
 
-        /* ========== تحسينات التجاوب العملاقة ========== */
         @media (max-width: 1400px) {
             .dashboard { padding: 0 2rem; }
             .welcome-title { font-size: var(--font-size-4xl); }
@@ -1890,17 +1839,16 @@
         // ========== إعدادات التطبيق العملاقة ==========
         const CONFIG = {
             APP_NAME: 'تعلّم.ما',
-            APP_VERSION: '5.0.0',
+            APP_VERSION: '6.0.0',
             DEFAULT_AVATARS: ['👨‍🏫', '👩‍🏫', '📚', '🔬', '📐', '⚡', '📝', '🌍', '🧪', '🎓', '🔭', '🧬', '🔮', '💡', '⭐'],
             TOAST_DURATION: 3000,
-            MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB
+            MAX_FILE_SIZE: 10 * 1024 * 1024,
             ALLOWED_FILE_TYPES: ['application/pdf', 'image/jpeg', 'image/png', 'image/gif', 'video/mp4'],
             MAX_FILES_PER_USER: 50
         };
 
         // ========== التطبيق العملاق ==========
         const App = {
-            // ========== البيانات الأساسية ==========
             teachers: [],
             students: [],
             lessons: [],
@@ -1923,7 +1871,6 @@
             currentFile: null,
             uploadQueue: [],
             
-            // ========== تهيئة ==========
             init() {
                 this.loadData();
                 if (this.teachers.length === 0) this.addSampleTeachers();
@@ -1971,7 +1918,6 @@
                 }
             },
             
-            // ========== بيانات تجريبية موسعة ==========
             addSampleTeachers() {
                 const sampleTeachers = [
                     { id: 1, name: 'أحمد الفاسي', email: 'ahmed@teacher.com', password: '123456', specialty: 'الرياضيات', bio: 'أستاذ الرياضيات للبكالوريا - خبرة 15 سنة', avatar: '📐', rating: 4.8, followers: [], subjects: ['math'], levels: ['bac1', 'bac2'] },
@@ -2024,7 +1970,6 @@
                 this.saveAll();
             },
             
-            // ========== دوال مساعدة ==========
             toast(message, type = 'success', title = '') {
                 const toast = document.createElement('div');
                 toast.className = `toast ${type}`;
@@ -2072,7 +2017,6 @@
                 return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
             },
             
-            // ========== نظام رفع الملفات ==========
             initFileUpload() {
                 const dropArea = document.getElementById('dropArea');
                 if (!dropArea) return;
@@ -2206,7 +2150,6 @@
                 this.renderFileList();
             },
             
-            // ========== واجهة المستخدم ==========
             render() {
                 this.updateNavMenu();
                 
@@ -2241,7 +2184,6 @@
                 }
             },
             
-            // ========== منطقة التلاميذ ==========
             renderStudentDashboard() {
                 const student = this.students.find(s => s.id === this.currentUser.id);
                 if (!student) return;
@@ -2300,7 +2242,7 @@
                             `).join('')}
                         </div>
                         <div class="active-filters" id="activeFilters"></div>
-                        <button class="search-btn" onclick="App.clearAllFilters()"><i class="fas fa-times"></i> مسح الكل</button>
+                        <button class="search-btn" onclick="App.searchContent()"><i class="fas fa-search"></i> بحث</button>
                     </div>
                     
                     <div class="student-tabs">
@@ -2454,7 +2396,6 @@
                 }[tab];
             },
             
-            // ========== نظام البحث ==========
             searchContent() {
                 const s = document.getElementById('searchInput')?.value?.toLowerCase() || '';
                 const l = document.getElementById('levelFilter')?.value || '';
@@ -2508,16 +2449,6 @@
                 this.searchContent();
             },
             
-            clearAllFilters() {
-                this.filters = { search: '', level: '', subject: '', teacherName: '' };
-                ['searchInput', 'levelFilter', 'subjectFilter', 'teacherFilter'].forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.value = '';
-                });
-                this.searchContent();
-            },
-            
-            // ========== تفاعلات التلميذ ==========
             toggleFollow(teacherId) {
                 const student = this.students.find(s => s.id === this.currentUser.id);
                 const teacher = this.teachers.find(t => t.id === teacherId);
@@ -2586,7 +2517,6 @@
                 `);
             },
             
-            // ========== صفحة قناة الأستاذ ==========
             viewTeacherChannel(teacherId) {
                 this.viewingChannel = teacherId;
                 const teacher = this.teachers.find(t => t.id === teacherId);
@@ -2665,7 +2595,6 @@
                 }[tab];
             },
             
-            // ========== لوحة تحكم الأستاذ ==========
             renderTeacherDashboard() {
                 const teacher = this.teachers.find(t => t.id === this.currentUser.id);
                 const teacherLessons = this.lessons.filter(l => l.teacherId === teacher.id);
@@ -2794,7 +2723,6 @@
                 this.closeModal();
             },
             
-            // ========== المصادقة ==========
             showAuthModal() {
                 this.showModal(`
                     <h2 style="color: var(--primary); text-align: center;">مرحباً بك في تعلّم.ما</h2>
@@ -2912,7 +2840,6 @@
                 this.render();
             },
             
-            // ========== خلفية متحركة ==========
             initAnimatedBg() {
                 const bg = document.getElementById('animatedBg');
                 for (let i = 0; i < 30; i++) {
@@ -2927,7 +2854,6 @@
             }
         };
 
-        // ========== تشغيل التطبيق ==========
         App.init();
     </script>
 </body>
