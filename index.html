@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلّم.ما - منصة التعليم المغربية</title>
+    <title>تعلّم.ما - المنصة التعليمية المتكاملة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#333;min-height:100vh}.navbar{background:rgba(30,60,114,0.95);backdrop-filter:blur(10px);color:#fff;padding:1rem 5%;position:sticky;top:0;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}.logo{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#fff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer}.nav-menu{display:flex;gap:1rem;align-items:center}.nav-btn{background:transparent;border:2px solid rgba(255,255,255,0.2);color:#fff;padding:0.6rem 1.5rem;border-radius:50px;cursor:pointer;transition:all 0.3s ease}.nav-btn:hover{background:#fff;color:#1e3c72;transform:translateY(-2px)}.user-badge{background:rgba(255,255,255,0.1);padding:0.5rem 1.5rem;border-radius:50px;color:#fff;display:flex;align-items:center;gap:0.5rem}.dashboard{max-width:1400px;margin:2rem auto;padding:0 2rem}.welcome-card{background:linear-gradient(135deg,#1e3c72,#0f2b4f);color:#fff;padding:2rem;border-radius:15px;margin-bottom:2rem;position:relative;overflow:hidden}.welcome-card::before{content:'📚';position:absolute;font-size:8rem;opacity:0.1;left:-20px;bottom:-20px;transform:rotate(-15deg)}.welcome-title{font-size:2rem;margin-bottom:1rem}.welcome-stats{display:flex;gap:2rem;flex-wrap:wrap}.welcome-stat{display:flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);padding:0.5rem 1rem;border-radius:50px}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}.stat-card{background:#fff;padding:1.5rem;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;align-items:center;gap:1rem;transition:all 0.3s ease}.stat-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}.stat-icon{width:50px;height:50px;background:#1e3c72;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem}.stat-value{font-size:2rem;font-weight:800;color:#1e3c72;line-height:1}.teachers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}.teacher-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease;cursor:pointer}.teacher-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}.teacher-header{height:80px;background:linear-gradient(135deg,#1e3c72,#2a5298)}.teacher-avatar{width:100px;height:100px;background:#fff;border-radius:50%;margin:-50px auto 0;display:flex;align-items:center;justify-content:center;font-size:3rem;border:4px solid #fff}.teacher-info{padding:1.5rem;text-align:center}.teacher-name{font-size:1.5rem;color:#1e3c72}.teacher-specialty{color:#e6b800;margin:0.5rem 0}.teacher-bio{color:#666;font-size:0.9rem;margin-bottom:1rem}.teacher-stats{display:flex;justify-content:center;gap:1rem;margin:1rem 0}.stat-badge{background:#f8f9fa;padding:0.3rem 1rem;border-radius:50px;font-size:0.9rem;display:flex;align-items:center;gap:0.3rem}.follow-btn{width:100%;padding:0.8rem;border:none;border-radius:50px;background:#1e3c72;color:#fff;font-weight:600;cursor:pointer;transition:all 0.3s ease;margin-top:1rem}.follow-btn.following{background:#28a745}.student-tabs{display:flex;gap:1rem;margin:2rem 0;flex-wrap:wrap}.tab-btn{padding:0.8rem 2rem;border:none;background:rgba(255,255,255,0.1);color:#fff;border-radius:50px;cursor:pointer;font-size:1rem;font-weight:600;transition:all 0.3s ease}.tab-btn:hover,.tab-btn.active{background:#ffd700;color:#1e3c72}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:2000;justify-content:center;align-items:center}.modal-content{background:#fff;width:90%;max-width:500px;padding:2rem;border-radius:15px;position:relative;animation:modalZoom 0.3s ease}@keyframes modalZoom{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}.modal-close{position:absolute;left:1rem;top:1rem;font-size:1.5rem;cursor:pointer;width:30px;height:30px;background:#f8f9fa;border-radius:50%;display:flex;align-items:center;justify-content:center}.modal-close:hover{background:#dc3545;color:#fff}.form-group{margin-bottom:1rem}.form-group input,.form-group select{width:100%;padding:0.8rem;border:2px solid #e9ecef;border-radius:5px}.submit-btn{width:100%;padding:1rem;background:#1e3c72;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:1.1rem;transition:all 0.3s ease}.submit-btn:hover{background:#2a5298;transform:translateY(-2px)}.user-type-selector{display:flex;gap:1rem;margin:1rem 0}.user-type-btn{flex:1;padding:1rem;border:2px solid #1e3c72;background:transparent;color:#1e3c72;border-radius:50px;cursor:pointer;font-weight:600;transition:all 0.3s ease}.user-type-btn:hover{background:rgba(30,60,114,0.1)}.user-type-btn.active{background:#1e3c72;color:#fff}.toast{position:fixed;bottom:20px;right:20px;background:#fff;padding:1rem 2rem;border-radius:50px;box-shadow:0 4px 12px rgba(0,0,0,0.1);border-right:4px solid #28a745;z-index:3000;animation:slideIn 0.3s ease}@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}.toast.error{border-right-color:#dc3545}.lessons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:1rem}.lesson-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease}.lesson-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}.lesson-header{height:120px;background:linear-gradient(135deg,#1e3c72,#2a5298);display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff}.lesson-content{padding:1.5rem}.lesson-title{font-size:1.2rem;color:#1e3c72;margin-bottom:0.5rem}.lesson-meta{display:flex;gap:1rem;color:#666;font-size:0.9rem;margin:0.5rem 0}.lesson-actions{display:flex;gap:0.5rem;margin-top:1rem}.lesson-btn{flex:1;padding:0.5rem;border:none;border-radius:5px;cursor:pointer;font-weight:600}.view-btn{background:#1e3c72;color:#fff}.save-btn{background:#ffd700;color:#1e3c72}.save-btn.saved{background:#28a745;color:#fff}@media (max-width:768px){.nav-container{flex-direction:column;gap:1rem}.student-tabs{flex-direction:column}.tab-btn{width:100%}.teachers-grid{grid-template-columns:1fr}}
+        /* ========== الأنماط العامة ========== */
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#333;min-height:100vh}.navbar{background:rgba(30,60,114,0.95);backdrop-filter:blur(10px);color:#fff;padding:1rem 5%;position:sticky;top:0;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}.logo{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#fff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer}.nav-menu{display:flex;gap:1rem;align-items:center}.nav-btn{background:transparent;border:2px solid rgba(255,255,255,0.2);color:#fff;padding:0.6rem 1.5rem;border-radius:50px;cursor:pointer;transition:all 0.3s ease}.nav-btn:hover{background:#fff;color:#1e3c72;transform:translateY(-2px)}.user-badge{background:rgba(255,255,255,0.1);padding:0.5rem 1.5rem;border-radius:50px;color:#fff;display:flex;align-items:center;gap:0.5rem}.dashboard{max-width:1400px;margin:2rem auto;padding:0 2rem}.welcome-card{background:linear-gradient(135deg,#1e3c72,#0f2b4f);color:#fff;padding:2rem;border-radius:15px;margin-bottom:2rem;position:relative;overflow:hidden}.welcome-card::before{content:'📚';position:absolute;font-size:8rem;opacity:0.1;left:-20px;bottom:-20px;transform:rotate(-15deg)}.welcome-title{font-size:2rem;margin-bottom:1rem}.welcome-stats{display:flex;gap:2rem;flex-wrap:wrap}.welcome-stat{display:flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);padding:0.5rem 1rem;border-radius:50px}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}.stat-card{background:#fff;padding:1.5rem;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;align-items:center;gap:1rem;transition:all 0.3s ease}.stat-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}.stat-icon{width:50px;height:50px;background:#1e3c72;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem}.stat-value{font-size:2rem;font-weight:800;color:#1e3c72;line-height:1}.teachers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}.teacher-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease;cursor:pointer}.teacher-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}.teacher-header{height:80px;background:linear-gradient(135deg,#1e3c72,#2a5298)}.teacher-avatar{width:100px;height:100px;background:#fff;border-radius:50%;margin:-50px auto 0;display:flex;align-items:center;justify-content:center;font-size:3rem;border:4px solid #fff}.teacher-info{padding:1.5rem;text-align:center}.teacher-name{font-size:1.5rem;color:#1e3c72}.teacher-specialty{color:#e6b800;margin:0.5rem 0}.teacher-bio{color:#666;font-size:0.9rem;margin-bottom:1rem}.follow-btn{width:100%;padding:0.8rem;border:none;border-radius:50px;background:#1e3c72;color:#fff;font-weight:600;cursor:pointer;transition:all 0.3s ease;margin-top:0.5rem}.follow-btn.following{background:#28a745}.student-tabs{display:flex;gap:1rem;margin:2rem 0;flex-wrap:wrap}.tab-btn{padding:0.8rem 2rem;border:none;background:rgba(255,255,255,0.1);color:#fff;border-radius:50px;cursor:pointer;font-size:1rem;font-weight:600;transition:all 0.3s ease}.tab-btn:hover,.tab-btn.active{background:#ffd700;color:#1e3c72}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:2000;justify-content:center;align-items:center}.modal-content{background:#fff;width:90%;max-width:600px;padding:2rem;border-radius:15px;position:relative;animation:modalZoom 0.3s ease}@keyframes modalZoom{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}.modal-close{position:absolute;left:1rem;top:1rem;font-size:1.5rem;cursor:pointer;width:35px;height:35px;background:#f8f9fa;border-radius:50%;display:flex;align-items:center;justify-content:center}.modal-close:hover{background:#dc3545;color:#fff}.form-group{margin-bottom:1rem}.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem;border:2px solid #e9ecef;border-radius:5px;font-family:'Cairo',sans-serif}.submit-btn{width:100%;padding:1rem;background:#1e3c72;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:1.1rem;transition:all 0.3s ease}.submit-btn:hover{background:#2a5298}.user-type-selector{display:flex;gap:1rem;margin:1rem 0}.user-type-btn{flex:1;padding:1rem;border:2px solid #1e3c72;background:transparent;color:#1e3c72;border-radius:50px;cursor:pointer;font-weight:600;transition:all 0.3s ease}.user-type-btn:hover{background:rgba(30,60,114,0.1)}.user-type-btn.active{background:#1e3c72;color:#fff}.toast{position:fixed;bottom:20px;right:20px;background:#fff;padding:1rem 2rem;border-radius:50px;box-shadow:0 4px 12px rgba(0,0,0,0.1);border-right:4px solid #28a745;z-index:3000;animation:slideIn 0.3s ease}@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}.toast.error{border-right-color:#dc3545}.channel-page{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.channel-cover{height:150px;background:linear-gradient(135deg,#1e3c72,#2a5298);position:relative}.channel-avatar-large{width:100px;height:100px;background:#fff;border-radius:50%;position:absolute;bottom:-50px;right:30px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;border:4px solid #ffd700}.channel-info{padding:4rem 2rem 2rem}.channel-name{font-size:1.8rem;color:#1e3c72}.channel-specialty{color:#e6b800;font-size:1.1rem}.channel-bio{color:#666;margin:1rem 0}.channel-meta{display:flex;gap:2rem;margin:1rem 0}.channel-actions{display:flex;gap:1rem;margin-top:1rem}.lessons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin:1rem 0}.lesson-card{background:#f8f9fa;border-radius:10px;padding:1rem}.lesson-title{color:#1e3c72;font-weight:600}.lesson-meta{color:#666;font-size:0.9rem;margin:0.5rem 0}.comments-section{margin-top:2rem}.comment{background:#f8f9fa;border-radius:10px;padding:1rem;margin-bottom:1rem}.comment-header{display:flex;gap:0.5rem;margin-bottom:0.5rem}.comment-author{font-weight:600;color:#1e3c72}.comment-date{color:#666;font-size:0.8rem}.comment-text{margin-bottom:0.5rem}.comment-actions{display:flex;gap:1rem;color:#666;font-size:0.9rem}.comment-actions span{cursor:pointer}.liked{color:#e63946}.add-comment textarea{width:100%;padding:0.5rem;border:2px solid #e9ecef;border-radius:5px;margin-bottom:0.5rem}.add-comment button{background:#1e3c72;color:#fff;border:none;padding:0.5rem 1rem;border-radius:5px;cursor:pointer}.rating-stars{color:#ffd700;font-size:1.2rem;cursor:pointer}.rating-stars span{margin:0 2px}.rating-stars span:hover{transform:scale(1.2)}.no-data{text-align:center;padding:2rem;background:rgba(255,255,255,0.1);border-radius:15px;color:#fff}.no-data i{font-size:3rem;margin-bottom:1rem;opacity:0.5}@media (max-width:768px){.nav-container{flex-direction:column;gap:1rem}.student-tabs{flex-direction:column}.tab-btn{width:100%}.teachers-grid{grid-template-columns:1fr}.channel-avatar-large{right:50%;transform:translateX(50%)}.channel-info{text-align:center}.channel-meta{justify-content:center}.channel-actions{flex-direction:column}}
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo" onclick="window.location.reload()">تعلّم<span>.ما</span></div>
+            <div class="logo" onclick="location.reload()">تعلّم<span>.ما</span></div>
             <div class="nav-menu" id="navMenu"></div>
         </div>
     </nav>
@@ -27,38 +28,231 @@
         </div>
     </div>
 
+    <!-- ========== تضمين أكواد الأساتذة والتلاميذ ========== -->
     <script>
-        // ========== 10 أساتذة تجريبيين ==========
-        const teachers = [
-            { id: 1, name: 'أحمد الفاسي', email: 'ahmed@teacher.com', password: '123456', specialty: 'الرياضيات', bio: 'أستاذ الرياضيات - 15 سنة خبرة', avatar: '📐', rating: 4.8, followers: [], lessons: 24 },
-            { id: 2, name: 'فاطمة المراكشي', email: 'fatima@teacher.com', password: '123456', specialty: 'الفيزياء', bio: 'دكتورة في الفيزياء النووية', avatar: '⚡', rating: 4.9, followers: [], lessons: 18 },
-            { id: 3, name: 'محمد البيضاوي', email: 'mohamed@teacher.com', password: '123456', specialty: 'العربية', bio: 'أستاذ اللغة العربية', avatar: '📝', rating: 4.7, followers: [], lessons: 31 },
-            { id: 4, name: 'سعاد المغربية', email: 'souad@teacher.com', password: '123456', specialty: 'الفلسفة', bio: 'أستاذة الفلسفة', avatar: '📚', rating: 4.6, followers: [], lessons: 15 },
-            { id: 5, name: 'عمر السوسي', email: 'omar@teacher.com', password: '123456', specialty: 'الإنجليزية', bio: 'خبير في اللغة الإنجليزية', avatar: '🇬🇧', rating: 4.9, followers: [], lessons: 27 },
-            { id: 6, name: 'خديجة الصنهاجي', email: 'khadija@teacher.com', password: '123456', specialty: 'الفرنسية', bio: 'أستاذة الفرنسية', avatar: '🇫🇷', rating: 4.8, followers: [], lessons: 22 },
-            { id: 7, name: 'حسن الأمازيغي', email: 'hassan@teacher.com', password: '123456', specialty: 'التاريخ', bio: 'مؤرخ وباحث', avatar: '🏛️', rating: 4.7, followers: [], lessons: 19 },
-            { id: 8, name: 'نبيل السلاوي', email: 'nabil@teacher.com', password: '123456', specialty: 'الجغرافيا', bio: 'متخصص في الجغرافيا', avatar: '🌍', rating: 4.6, followers: [], lessons: 16 },
-            { id: 9, name: 'إيمان البيضاء', email: 'iman@teacher.com', password: '123456', specialty: 'علوم الحياة', bio: 'دكتورة في البيولوجيا', avatar: '🧬', rating: 4.9, followers: [], lessons: 28 },
-            { id: 10, name: 'عبد الله فاسي', email: 'abdellah@teacher.com', password: '123456', specialty: 'الكيمياء', bio: 'أستاذ الكيمياء', avatar: '🧪', rating: 4.8, followers: [], lessons: 23 }
-        ];
+        // ========== قسم الأساتذة ==========
+        const TeacherSection = {
+            teachers: [
+                { id: 1, name: 'أحمد الفاسي', email: 'ahmed@teacher.com', password: '123456', specialty: 'الرياضيات', bio: 'أستاذ الرياضيات - 15 سنة خبرة', avatar: '📐', rating: 4.8, followers: [], lessons: [], students: 156 },
+                { id: 2, name: 'فاطمة المراكشي', email: 'fatima@teacher.com', password: '123456', specialty: 'الفيزياء', bio: 'دكتورة في الفيزياء النووية', avatar: '⚡', rating: 4.9, followers: [], lessons: [], students: 134 },
+                { id: 3, name: 'محمد البيضاوي', email: 'mohamed@teacher.com', password: '123456', specialty: 'العربية', bio: 'أستاذ اللغة العربية', avatar: '📝', rating: 4.7, followers: [], lessons: [], students: 98 },
+                { id: 4, name: 'سعاد المغربية', email: 'souad@teacher.com', password: '123456', specialty: 'الفلسفة', bio: 'أستاذة الفلسفة', avatar: '📚', rating: 4.6, followers: [], lessons: [], students: 67 }
+            ],
 
-        // ========== دروس تجريبية ==========
-        const lessons = [
-            { id: 101, title: 'المعادلات من الدرجة الأولى', teacherId: 1, teacherName: 'أحمد الفاسي', level: 'bac1', views: 234, downloads: 56 },
-            { id: 102, title: 'قوانين نيوتن', teacherId: 2, teacherName: 'فاطمة المراكشي', level: 'bac2', views: 189, downloads: 43 },
-            { id: 103, title: 'قواعد اللغة العربية', teacherId: 3, teacherName: 'محمد البيضاوي', level: 'bac1', views: 312, downloads: 78 },
-            { id: 104, title: 'الفلسفة الإسلامية', teacherId: 4, teacherName: 'سعاد المغربية', level: 'bac2', views: 156, downloads: 34 },
-            { id: 105, title: 'قواعد اللغة الإنجليزية', teacherId: 5, teacherName: 'عمر السوسي', level: 'bac1', views: 278, downloads: 67 }
-        ];
+            lessons: [
+                { id: 101, teacherId: 1, title: 'المعادلات من الدرجة الأولى', description: 'شرح مبسط مع تمارين', level: 'bac1', type: 'video', duration: '25:30', views: 234, downloads: 56 },
+                { id: 102, teacherId: 1, title: 'الدوال الخطية', description: 'شرح الدوال', level: 'bac2', type: 'video', duration: '32:15', views: 189, downloads: 43 },
+                { id: 103, teacherId: 2, title: 'قوانين نيوتن', description: 'قوانين الحركة', level: 'bac2', type: 'video', duration: '28:45', views: 312, downloads: 78 },
+                { id: 104, teacherId: 2, title: 'الكهرباء', description: 'التيار الكهربائي', level: 'bac1', type: 'pdf', pages: 25, size: '3.2 MB', views: 156, downloads: 34 },
+                { id: 105, teacherId: 3, title: 'قواعد اللغة العربية', description: 'النحو والصرف', level: 'bac1', type: 'pdf', pages: 30, size: '4.1 MB', views: 267, downloads: 89 },
+                { id: 106, teacherId: 3, title: 'البلاغة العربية', description: 'علم البيان', level: 'bac2', type: 'video', duration: '35:20', views: 198, downloads: 45 },
+                { id: 107, teacherId: 4, title: 'الفلسفة الإسلامية', description: 'مدخل إلى الفلسفة', level: 'bac2', type: 'pdf', pages: 22, size: '2.8 MB', views: 145, downloads: 23 }
+            ],
 
-        const students = [
-            { id: 1, name: 'يوسف الطالبي', email: 'youssef@student.com', password: '123456', level: 'bac2', following: [], savedLessons: [], points: 150, streak: 5 },
-            { id: 2, name: 'سارة العلمي', email: 'sara@student.com', password: '123456', level: 'bac1', following: [], savedLessons: [], points: 80, streak: 3 }
-        ];
+            posts: [
+                { id: 201, teacherId: 1, content: 'غداً موعدنا مع درس جديد في الرياضيات', date: '2024-03-15', likes: 34, comments: 12 },
+                { id: 202, teacherId: 1, content: 'تمارين إضافية في المعادلات', date: '2024-03-14', likes: 28, comments: 8 },
+                { id: 203, teacherId: 2, content: 'تجربة عملية في الفيزياء', date: '2024-03-15', likes: 45, comments: 15 },
+                { id: 204, teacherId: 3, content: 'درس النحو يوم السبت', date: '2024-03-13', likes: 23, comments: 7 },
+                { id: 205, teacherId: 4, content: 'محاضرة في الفلسفة الإسلامية', date: '2024-03-12', likes: 19, comments: 5 }
+            ],
 
+            getTeacherStats(teacherId) {
+                const teacher = this.teachers.find(t => t.id === teacherId);
+                const teacherLessons = this.lessons.filter(l => l.teacherId === teacherId);
+                const teacherPosts = this.posts.filter(p => p.teacherId === teacherId);
+                return {
+                    name: teacher.name, specialty: teacher.specialty, bio: teacher.bio,
+                    avatar: teacher.avatar, rating: teacher.rating,
+                    followers: teacher.followers.length,
+                    lessons: teacherLessons.length, posts: teacherPosts.length,
+                    students: teacher.students,
+                    totalViews: teacherLessons.reduce((sum, l) => sum + l.views, 0),
+                    totalDownloads: teacherLessons.reduce((sum, l) => sum + l.downloads, 0)
+                };
+            },
+
+            addLesson(teacherId, lessonData) {
+                const newLesson = { id: Date.now(), teacherId, ...lessonData, views: 0, downloads: 0 };
+                this.lessons.push(newLesson);
+                return newLesson;
+            },
+
+            addPost(teacherId, content) {
+                const newPost = { id: Date.now(), teacherId, content, date: new Date().toISOString().split('T')[0], likes: 0, comments: 0 };
+                this.posts.push(newPost);
+                return newPost;
+            },
+
+            deleteLesson(lessonId) { this.lessons = this.lessons.filter(l => l.id !== lessonId); },
+            deletePost(postId) { this.posts = this.posts.filter(p => p.id !== postId); },
+            getTeacherLessons(teacherId) { return this.lessons.filter(l => l.teacherId === teacherId); },
+            getTeacherPosts(teacherId) { return this.posts.filter(p => p.teacherId === teacherId); },
+
+            addFollower(teacherId, studentId) {
+                const teacher = this.teachers.find(t => t.id === teacherId);
+                if (!teacher.followers.includes(studentId)) {
+                    teacher.followers.push(studentId);
+                    return true;
+                }
+                return false;
+            },
+
+            removeFollower(teacherId, studentId) {
+                const teacher = this.teachers.find(t => t.id === teacherId);
+                teacher.followers = teacher.followers.filter(id => id !== studentId);
+            },
+
+            saveToStorage() {
+                localStorage.setItem('teachers', JSON.stringify(this.teachers));
+                localStorage.setItem('lessons', JSON.stringify(this.lessons));
+                localStorage.setItem('posts', JSON.stringify(this.posts));
+            },
+
+            loadFromStorage() {
+                const savedTeachers = localStorage.getItem('teachers');
+                const savedLessons = localStorage.getItem('lessons');
+                const savedPosts = localStorage.getItem('posts');
+                if (savedTeachers) this.teachers = JSON.parse(savedTeachers);
+                if (savedLessons) this.lessons = JSON.parse(savedLessons);
+                if (savedPosts) this.posts = JSON.parse(savedPosts);
+            }
+        };
+
+        // ========== قسم التلاميذ ==========
+        const StudentSection = {
+            students: [
+                { id: 1, name: 'يوسف الطالبي', email: 'youssef@student.com', password: '123456', level: 'bac2', following: [], savedLessons: [], points: 150, streak: 5 },
+                { id: 2, name: 'سارة العلمي', email: 'sara@student.com', password: '123456', level: 'bac1', following: [], savedLessons: [], points: 80, streak: 3 },
+                { id: 3, name: 'عمر الحدادي', email: 'omar@student.com', password: '123456', level: 'bac2', following: [], savedLessons: [], points: 200, streak: 10 },
+                { id: 4, name: 'ليلى المراكشي', email: 'laila@student.com', password: '123456', level: 'bac1', following: [], savedLessons: [], points: 120, streak: 7 },
+                { id: 5, name: 'أمينة السوسي', email: 'amina@student.com', password: '123456', level: 'bac2', following: [], savedLessons: [], points: 95, streak: 4 }
+            ],
+
+            comments: [
+                { id: 301, lessonId: 101, studentId: 1, text: 'شرح رائع جداً', date: '2024-03-15', likes: 12 },
+                { id: 302, lessonId: 101, studentId: 2, text: 'استفدت كثيراً', date: '2024-03-15', likes: 8 },
+                { id: 303, lessonId: 102, studentId: 1, text: 'أحسنتم', date: '2024-03-14', likes: 5 },
+                { id: 304, lessonId: 103, studentId: 3, text: 'ممتاز', date: '2024-03-14', likes: 7 },
+                { id: 305, lessonId: 104, studentId: 2, text: 'شكراً جزيلاً', date: '2024-03-13', likes: 4 }
+            ],
+
+            ratings: [
+                { lessonId: 101, studentId: 1, rating: 5 },
+                { lessonId: 101, studentId: 2, rating: 4 },
+                { lessonId: 102, studentId: 1, rating: 5 },
+                { lessonId: 103, studentId: 3, rating: 4 },
+                { lessonId: 104, studentId: 2, rating: 5 }
+            ],
+
+            getStudentStats(studentId) {
+                const student = this.students.find(s => s.id === studentId);
+                const studentComments = this.comments.filter(c => c.studentId === studentId);
+                const studentRatings = this.ratings.filter(r => r.studentId === studentId);
+                return {
+                    name: student.name, level: student.level, points: student.points,
+                    streak: student.streak, following: student.following.length,
+                    savedLessons: student.savedLessons.length,
+                    comments: studentComments.length, ratings: studentRatings.length
+                };
+            },
+
+            followTeacher(studentId, teacherId) {
+                const student = this.students.find(s => s.id === studentId);
+                if (!student.following.includes(teacherId)) {
+                    student.following.push(teacherId);
+                    student.points += 10;
+                    return true;
+                }
+                return false;
+            },
+
+            unfollowTeacher(studentId, teacherId) {
+                const student = this.students.find(s => s.id === studentId);
+                student.following = student.following.filter(id => id !== teacherId);
+            },
+
+            saveLesson(studentId, lessonId) {
+                const student = this.students.find(s => s.id === studentId);
+                if (!student.savedLessons.includes(lessonId)) {
+                    student.savedLessons.push(lessonId);
+                    student.points += 5;
+                    return true;
+                }
+                return false;
+            },
+
+            unsaveLesson(studentId, lessonId) {
+                const student = this.students.find(s => s.id === studentId);
+                student.savedLessons = student.savedLessons.filter(id => id !== lessonId);
+            },
+
+            addComment(studentId, lessonId, text) {
+                const newComment = { id: Date.now(), lessonId, studentId, text, date: new Date().toISOString().split('T')[0], likes: 0 };
+                this.comments.push(newComment);
+                const student = this.students.find(s => s.id === studentId);
+                student.points += 2;
+                return newComment;
+            },
+
+            rateLesson(studentId, lessonId, rating) {
+                this.ratings = this.ratings.filter(r => !(r.lessonId === lessonId && r.studentId === studentId));
+                this.ratings.push({ lessonId, studentId, rating });
+                const student = this.students.find(s => s.id === studentId);
+                student.points += 3;
+            },
+
+            getStudentRating(studentId, lessonId) {
+                const rating = this.ratings.find(r => r.lessonId === lessonId && r.studentId === studentId);
+                return rating ? rating.rating : 0;
+            },
+
+            getLessonAverageRating(lessonId) {
+                const lessonRatings = this.ratings.filter(r => r.lessonId === lessonId);
+                if (lessonRatings.length === 0) return 0;
+                const sum = lessonRatings.reduce((acc, r) => acc + r.rating, 0);
+                return (sum / lessonRatings.length).toFixed(1);
+            },
+
+            getLessonComments(lessonId) {
+                return this.comments.filter(c => c.lessonId === lessonId).sort((a, b) => new Date(b.date) - new Date(a.date));
+            },
+
+            getFollowingTeachers(studentId) {
+                const student = this.students.find(s => s.id === studentId);
+                return student.following;
+            },
+
+            getSavedLessons(studentId) {
+                const student = this.students.find(s => s.id === studentId);
+                return student.savedLessons;
+            },
+
+            saveToStorage() {
+                localStorage.setItem('students', JSON.stringify(this.students));
+                localStorage.setItem('comments', JSON.stringify(this.comments));
+                localStorage.setItem('ratings', JSON.stringify(this.ratings));
+            },
+
+            loadFromStorage() {
+                const savedStudents = localStorage.getItem('students');
+                const savedComments = localStorage.getItem('comments');
+                const savedRatings = localStorage.getItem('ratings');
+                if (savedStudents) this.students = JSON.parse(savedStudents);
+                if (savedComments) this.comments = JSON.parse(savedComments);
+                if (savedRatings) this.ratings = JSON.parse(savedRatings);
+            }
+        };
+
+        // ========== تحميل البيانات المخزنة ==========
+        TeacherSection.loadFromStorage();
+        StudentSection.loadFromStorage();
+
+        // ========== المتغيرات العامة ==========
         let currentUser = null;
         let selectedUserType = 'student';
-        let viewingChannel = null;
+        let viewingTeacher = null;
+        let viewingLesson = null;
 
         // ========== دوال مساعدة ==========
         function showToast(message, type = 'success') {
@@ -83,6 +277,7 @@
             return levels[level] || level;
         }
 
+        // ========== واجهة المستخدم ==========
         function renderUI() {
             const navMenu = document.getElementById('navMenu');
             
@@ -92,8 +287,10 @@
                     <button class="nav-btn" onclick="logout()">خروج</button>
                 `;
                 
-                if (viewingChannel) {
-                    renderChannelPage(viewingChannel);
+                if (viewingTeacher) {
+                    renderTeacherProfile(viewingTeacher);
+                } else if (viewingLesson) {
+                    renderLessonPage(viewingLesson);
                 } else if (currentUser.type === 'teacher') {
                     renderTeacherDashboard();
                 } else {
@@ -105,8 +302,83 @@
             }
         }
 
+        // ========== لوحة تحكم الأستاذ ==========
+        function renderTeacherDashboard() {
+            const teacher = TeacherSection.teachers.find(t => t.id === currentUser.id);
+            const teacherLessons = TeacherSection.getTeacherLessons(teacher.id);
+            const teacherPosts = TeacherSection.getTeacherPosts(teacher.id);
+            const followers = StudentSection.students.filter(s => teacher.followers.includes(s.id));
+            
+            document.getElementById('dashboard').innerHTML = `
+                <div class="welcome-card">
+                    <h1 class="welcome-title">مرحباً بك أ. ${teacher.name} 👨‍🏫</h1>
+                    <p>${teacher.bio}</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div><div class="stat-value">${teacher.followers.length}</div><div>متابع</div></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-book"></i></div>
+                        <div><div class="stat-value">${teacherLessons.length}</div><div>درس</div></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-newspaper"></i></div>
+                        <div><div class="stat-value">${teacherPosts.length}</div><div>منشور</div></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <div><div class="stat-value">${teacher.rating}</div><div>تقييم</div></div>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                    <h2 style="color: #1e3c72; margin-bottom: 1rem;">إجراءات سريعة</h2>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="nav-btn" style="background: #1e3c72; color: white;" onclick="showAddLessonForm()">
+                            <i class="fas fa-plus"></i> إضافة درس
+                        </button>
+                        <button class="nav-btn" style="background: #ffd700; color: #1e3c72;" onclick="showAddPostForm()">
+                            <i class="fas fa-plus"></i> إضافة منشور
+                        </button>
+                        <button class="nav-btn" style="background: #28a745; color: white;" onclick="showTeacherProfile()">
+                            <i class="fas fa-eye"></i> صفحتي
+                        </button>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                    <h2 style="color: #1e3c72; margin-bottom: 1rem;">آخر الدروس</h2>
+                    ${teacherLessons.slice(0, 3).map(lesson => `
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; margin-bottom: 0.5rem;">
+                            <h3 style="color: #1e3c72;">${lesson.title}</h3>
+                            <p style="color: #666;">👁️ ${lesson.views} مشاهدة | 📥 ${lesson.downloads} تحميل</p>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px;">
+                    <h2 style="color: #1e3c72; margin-bottom: 1rem;">آخر المتابعين</h2>
+                    ${followers.slice(0, 3).map(student => `
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <div style="font-size: 2rem;">👨‍🎓</div>
+                            <div>
+                                <h3 style="color: #1e3c72;">${student.name}</h3>
+                                <p style="color: #666;">${getLevelName(student.level)}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // ========== لوحة تحكم التلميذ ==========
         function renderStudentDashboard() {
-            const student = students.find(s => s.id === currentUser.id);
+            const student = StudentSection.students.find(s => s.id === currentUser.id);
+            const followingTeachers = TeacherSection.teachers.filter(t => student.following.includes(t.id));
+            const savedLessons = TeacherSection.lessons.filter(l => student.savedLessons.includes(l.id));
             
             document.getElementById('dashboard').innerHTML = `
                 <div class="welcome-card">
@@ -121,22 +393,23 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <div><div class="stat-value">${teachers.length}</div><div>أستاذ</div></div>
+                        <div><div class="stat-value">${TeacherSection.teachers.length}</div><div>أستاذ</div></div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fas fa-heart"></i></div>
-                        <div><div class="stat-value">${student.following?.length || 0}</div><div>متابعة</div></div>
+                        <div><div class="stat-value">${student.following.length}</div><div>متابعة</div></div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-book"></i></div>
-                        <div><div class="stat-value">${lessons.length}</div><div>درس</div></div>
+                        <div class="stat-icon"><i class="fas fa-bookmark"></i></div>
+                        <div><div class="stat-value">${student.savedLessons.length}</div><div>درس محفوظ</div></div>
                     </div>
                 </div>
                 
                 <div class="student-tabs">
-                    <button class="tab-btn active" onclick="showStudentTab('teachers')">جميع الأساتذة (${teachers.length})</button>
-                    <button class="tab-btn" onclick="showStudentTab('following')">أساتذتي (${student.following?.length || 0})</button>
-                    <button class="tab-btn" onclick="showStudentTab('lessons')">الدروس (${lessons.length})</button>
+                    <button class="tab-btn active" onclick="showStudentTab('teachers')">جميع الأساتذة (${TeacherSection.teachers.length})</button>
+                    <button class="tab-btn" onclick="showStudentTab('following')">أساتذتي (${student.following.length})</button>
+                    <button class="tab-btn" onclick="showStudentTab('lessons')">الدروس (${TeacherSection.lessons.length})</button>
+                    <button class="tab-btn" onclick="showStudentTab('saved')">محفوظاتي (${student.savedLessons.length})</button>
                 </div>
                 
                 <div id="studentContent">
@@ -145,26 +418,24 @@
             `;
         }
 
+        // ========== عرض جميع الأساتذة ==========
         function renderAllTeachers() {
-            const student = students.find(s => s.id === currentUser?.id);
+            const student = StudentSection.students.find(s => s.id === currentUser.id);
             
             return `
                 <div class="teachers-grid">
-                    ${teachers.map(teacher => {
-                        const isFollowing = student?.following?.includes(teacher.id);
-                        const teacherLessons = lessons.filter(l => l.teacherId === teacher.id).length;
+                    ${TeacherSection.teachers.map(teacher => {
+                        const isFollowing = student.following.includes(teacher.id);
+                        const teacherLessons = TeacherSection.lessons.filter(l => l.teacherId === teacher.id).length;
                         return `
-                            <div class="teacher-card" onclick="viewTeacherChannel(${teacher.id})">
+                            <div class="teacher-card" onclick="viewTeacherProfile(${teacher.id})">
                                 <div class="teacher-header"></div>
                                 <div class="teacher-avatar">${teacher.avatar}</div>
                                 <div class="teacher-info">
                                     <h3 class="teacher-name">${teacher.name}</h3>
                                     <p class="teacher-specialty">${teacher.specialty}</p>
-                                    <p class="teacher-bio">${teacher.bio}</p>
-                                    <div class="teacher-stats">
-                                        <span class="stat-badge"><i class="fas fa-star"></i> ${teacher.rating}</span>
-                                        <span class="stat-badge"><i class="fas fa-book"></i> ${teacherLessons}</span>
-                                    </div>
+                                    <p class="teacher-bio">${teacher.bio.substring(0, 50)}...</p>
+                                    <p>⭐ ${teacher.rating} | 📚 ${teacherLessons}</p>
                                     <button class="follow-btn ${isFollowing ? 'following' : ''}" 
                                         onclick="event.stopPropagation(); toggleFollow(${teacher.id})">
                                         ${isFollowing ? '✓ متابعة' : '+ متابعة'}
@@ -177,18 +448,19 @@
             `;
         }
 
+        // ========== عرض الأساتذة المتابعين ==========
         function renderFollowingTeachers() {
-            const student = students.find(s => s.id === currentUser.id);
-            const followingTeachers = teachers.filter(t => student.following?.includes(t.id));
+            const student = StudentSection.students.find(s => s.id === currentUser.id);
+            const followingTeachers = TeacherSection.teachers.filter(t => student.following.includes(t.id));
             
             if (followingTeachers.length === 0) {
-                return '<p style="color: white; text-align: center;">لم تتابع أي أستاذ بعد</p>';
+                return '<div class="no-data"><i class="fas fa-heart"></i><h3>لم تتابع أي أستاذ بعد</h3><p>تابع الأساتذة لمشاهدة دروسهم</p></div>';
             }
             
             return `
                 <div class="teachers-grid">
                     ${followingTeachers.map(teacher => `
-                        <div class="teacher-card" onclick="viewTeacherChannel(${teacher.id})">
+                        <div class="teacher-card" onclick="viewTeacherProfile(${teacher.id})">
                             <div class="teacher-header"></div>
                             <div class="teacher-avatar">${teacher.avatar}</div>
                             <div class="teacher-info">
@@ -204,31 +476,34 @@
             `;
         }
 
+        // ========== عرض جميع الدروس ==========
         function renderAllLessons() {
-            const student = students.find(s => s.id === currentUser?.id);
+            const student = StudentSection.students.find(s => s.id === currentUser.id);
             
             return `
                 <div class="lessons-grid">
-                    ${lessons.map(lesson => {
-                        const teacher = teachers.find(t => t.id === lesson.teacherId);
-                        const isSaved = student?.savedLessons?.includes(lesson.id);
+                    ${TeacherSection.lessons.map(lesson => {
+                        const teacher = TeacherSection.teachers.find(t => t.id === lesson.teacherId);
+                        const isSaved = student.savedLessons.includes(lesson.id);
+                        const avgRating = StudentSection.getLessonAverageRating(lesson.id);
                         return `
-                            <div class="lesson-card">
-                                <div class="lesson-header">📄</div>
-                                <div class="lesson-content">
-                                    <h3 class="lesson-title">${lesson.title}</h3>
-                                    <p class="teacher-specialty">${teacher?.name}</p>
-                                    <div class="lesson-meta">
-                                        <span><i class="fas fa-layer-group"></i> ${getLevelName(lesson.level)}</span>
-                                        <span><i class="fas fa-eye"></i> ${lesson.views}</span>
-                                    </div>
-                                    <div class="lesson-actions">
-                                        <button class="lesson-btn view-btn" onclick="viewLesson(${lesson.id})"><i class="fas fa-eye"></i> عرض</button>
-                                        <button class="lesson-btn save-btn ${isSaved ? 'saved' : ''}" 
-                                            onclick="event.stopPropagation(); toggleSaveLesson(${lesson.id})">
-                                            <i class="fas ${isSaved ? 'fa-check' : 'fa-bookmark'}"></i> ${isSaved ? 'محفوظ' : 'حفظ'}
-                                        </button>
-                                    </div>
+                            <div class="lesson-card" onclick="viewLesson(${lesson.id})">
+                                <h3 class="lesson-title">${lesson.title}</h3>
+                                <p style="color: #e6b800;">${teacher.name}</p>
+                                <div class="lesson-meta">
+                                    <span><i class="fas fa-layer-group"></i> ${getLevelName(lesson.level)}</span>
+                                    <span><i class="fas fa-eye"></i> ${lesson.views}</span>
+                                    <span><i class="fas fa-star"></i> ${avgRating}</span>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="nav-btn" style="flex:1; background: #1e3c72; color: white;" 
+                                        onclick="event.stopPropagation(); viewLesson(${lesson.id})">
+                                        عرض
+                                    </button>
+                                    <button class="nav-btn" style="flex:1; background: ${isSaved ? '#28a745' : '#ffd700'}; color: ${isSaved ? 'white' : '#1e3c72'};" 
+                                        onclick="event.stopPropagation(); toggleSaveLesson(${lesson.id})">
+                                        ${isSaved ? '✓ محفوظ' : 'حفظ'}
+                                    </button>
                                 </div>
                             </div>
                         `;
@@ -237,6 +512,35 @@
             `;
         }
 
+        // ========== عرض الدروس المحفوظة ==========
+        function renderSavedLessons() {
+            const student = StudentSection.students.find(s => s.id === currentUser.id);
+            const savedLessons = TeacherSection.lessons.filter(l => student.savedLessons.includes(l.id));
+            
+            if (savedLessons.length === 0) {
+                return '<div class="no-data"><i class="fas fa-bookmark"></i><h3>لا توجد دروس محفوظة</h3><p>احفظ الدروس التي تهمك للعودة إليها</p></div>';
+            }
+            
+            return `
+                <div class="lessons-grid">
+                    ${savedLessons.map(lesson => {
+                        const teacher = TeacherSection.teachers.find(t => t.id === lesson.teacherId);
+                        return `
+                            <div class="lesson-card" onclick="viewLesson(${lesson.id})">
+                                <h3 class="lesson-title">${lesson.title}</h3>
+                                <p style="color: #e6b800;">${teacher.name}</p>
+                                <button class="nav-btn" style="width:100%; background: #1e3c72; color: white;" 
+                                    onclick="event.stopPropagation(); viewLesson(${lesson.id})">
+                                    عرض
+                                </button>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        // ========== تبديل أقسام التلميذ ==========
         function showStudentTab(tab) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
@@ -244,28 +548,29 @@
             let content = '';
             if (tab === 'teachers') content = renderAllTeachers();
             else if (tab === 'following') content = renderFollowingTeachers();
-            else content = renderAllLessons();
+            else if (tab === 'lessons') content = renderAllLessons();
+            else content = renderSavedLessons();
             
             document.getElementById('studentContent').innerHTML = content;
         }
 
+        // ========== متابعة أستاذ ==========
         function toggleFollow(teacherId) {
-            const student = students.find(s => s.id === currentUser.id);
-            const teacher = teachers.find(t => t.id === teacherId);
-            
-            if (!student.following) student.following = [];
+            const student = StudentSection.students.find(s => s.id === currentUser.id);
+            const teacher = TeacherSection.teachers.find(t => t.id === teacherId);
             
             if (student.following.includes(teacherId)) {
-                student.following = student.following.filter(id => id !== teacherId);
-                teacher.followers = teacher.followers?.filter(id => id !== student.id) || [];
-                showToast('تم إلغاء المتابعة', 'info');
+                StudentSection.unfollowTeacher(student.id, teacherId);
+                TeacherSection.removeFollower(teacherId, student.id);
+                showToast('تم إلغاء متابعة ' + teacher.name, 'info');
             } else {
-                student.following.push(teacherId);
-                if (!teacher.followers) teacher.followers = [];
-                teacher.followers.push(student.id);
-                student.points += 10;
-                showToast('تمت المتابعة +10 نقاط');
+                StudentSection.followTeacher(student.id, teacherId);
+                TeacherSection.addFollower(teacherId, student.id);
+                showToast('تمت متابعة ' + teacher.name + ' +10 نقاط');
             }
+            
+            StudentSection.saveToStorage();
+            TeacherSection.saveToStorage();
             
             const activeTab = document.querySelector('.tab-btn.active')?.textContent || '';
             if (activeTab.includes('أساتذتي')) {
@@ -275,96 +580,331 @@
             }
         }
 
+        // ========== حفظ درس ==========
         function toggleSaveLesson(lessonId) {
-            const student = students.find(s => s.id === currentUser.id);
-            if (!student.savedLessons) student.savedLessons = [];
+            const student = StudentSection.students.find(s => s.id === currentUser.id);
             
             if (student.savedLessons.includes(lessonId)) {
-                student.savedLessons = student.savedLessons.filter(id => id !== lessonId);
-                showToast('تم إزالة الدرس', 'info');
+                StudentSection.unsaveLesson(student.id, lessonId);
+                showToast('تم إزالة الدرس من المحفوظات', 'info');
             } else {
-                student.savedLessons.push(lessonId);
-                student.points += 5;
+                StudentSection.saveLesson(student.id, lessonId);
                 showToast('تم حفظ الدرس +5 نقاط');
             }
             
+            StudentSection.saveToStorage();
+            
             const activeTab = document.querySelector('.tab-btn.active')?.textContent || '';
-            if (activeTab.includes('الدروس')) {
-                showStudentTab('lessons');
+            if (activeTab.includes('محفوظاتي')) {
+                showStudentTab('saved');
+            } else {
+                renderStudentDashboard();
             }
         }
 
-        function viewLesson(lessonId) {
-            const lesson = lessons.find(l => l.id === lessonId);
-            const teacher = teachers.find(t => t.id === lesson.teacherId);
-            
-            showModal(`
-                <h2 style="color: #1e3c72;">${lesson.title}</h2>
-                <p style="margin: 1rem 0;">درس في مادة ${teacher?.specialty}</p>
-                <p><strong>الأستاذ:</strong> ${teacher?.name}</p>
-                <p><strong>المشاهدات:</strong> ${lesson.views}</p>
-                <p><strong>التحميلات:</strong> ${lesson.downloads}</p>
-                <button class="submit-btn" style="margin-top: 1rem;" onclick="closeModal()">حسناً</button>
-            `);
-        }
-
-        function viewTeacherChannel(teacherId) {
-            viewingChannel = teacherId;
-            const teacher = teachers.find(t => t.id === teacherId);
-            const student = students.find(s => s.id === currentUser?.id);
-            const isFollowing = student?.following?.includes(teacherId) || false;
-            const teacherLessons = lessons.filter(l => l.teacherId === teacherId);
+        // ========== عرض صفحة الأستاذ ==========
+        function viewTeacherProfile(teacherId) {
+            viewingTeacher = teacherId;
+            const teacher = TeacherSection.teachers.find(t => t.id === teacherId);
+            const student = StudentSection.students.find(s => s.id === currentUser?.id);
+            const isFollowing = student?.following.includes(teacherId) || false;
+            const teacherLessons = TeacherSection.getTeacherLessons(teacherId);
+            const teacherPosts = TeacherSection.getTeacherPosts(teacherId);
             
             document.getElementById('dashboard').innerHTML = `
-                <div style="background: white; border-radius: 15px; padding: 2rem;">
-                    <div style="display: flex; gap: 2rem; align-items: center;">
-                        <div style="font-size: 5rem;">${teacher.avatar}</div>
-                        <div>
-                            <h1>${teacher.name}</h1>
-                            <p style="color: #e6b800;">${teacher.specialty}</p>
-                            <p>${teacher.bio}</p>
-                            <p>👥 ${teacher.followers?.length || 0} متابع</p>
-                            <p>⭐ ${teacher.rating}</p>
-                            <p>📚 ${teacherLessons.length} درس</p>
+                <div class="channel-page">
+                    <div class="channel-cover">
+                        <div class="channel-avatar-large">${teacher.avatar}</div>
+                    </div>
+                    <div class="channel-info">
+                        <h1 class="channel-name">${teacher.name}</h1>
+                        <p class="channel-specialty">${teacher.specialty}</p>
+                        <p class="channel-bio">${teacher.bio}</p>
+                        
+                        <div class="channel-meta">
+                            <div><strong style="font-size: 1.5rem;">${teacher.followers.length}</strong><br>متابع</div>
+                            <div><strong style="font-size: 1.5rem;">${teacherLessons.length}</strong><br>درس</div>
+                            <div><strong style="font-size: 1.5rem;">${teacherPosts.length}</strong><br>منشور</div>
+                            <div><strong style="font-size: 1.5rem;">${teacher.rating}</strong><br>تقييم</div>
+                        </div>
+                        
+                        <div class="channel-actions">
                             ${currentUser?.type === 'student' ? `
-                                <button class="nav-btn" style="background: #1e3c72; color: white; margin-left: 1rem;" 
-                                    onclick="toggleFollow(${teacher.id})">
+                                <button class="channel-btn channel-btn-primary" onclick="toggleFollow(${teacher.id})">
                                     ${isFollowing ? '✓ متابعة' : '+ متابعة'}
                                 </button>
                             ` : ''}
-                            <button class="nav-btn" onclick="goHome()">رجوع</button>
+                            <button class="channel-btn channel-btn-secondary" onclick="goHome()">
+                                رجوع
+                            </button>
+                        </div>
+                        
+                        <h2 style="color: #1e3c72; margin: 2rem 0 1rem;">الدروس</h2>
+                        <div class="lessons-grid">
+                            ${teacherLessons.map(lesson => `
+                                <div class="lesson-card" onclick="viewLesson(${lesson.id})">
+                                    <h3 class="lesson-title">${lesson.title}</h3>
+                                    <div class="lesson-meta">
+                                        <span>${lesson.type === 'video' ? '🎥' : '📄'} ${lesson.type === 'video' ? lesson.duration : lesson.pages + ' صفحة'}</span>
+                                        <span>👁️ ${lesson.views}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <h2 style="color: #1e3c72; margin: 2rem 0 1rem;">المنشورات</h2>
+                        <div style="display: grid; gap: 1rem;">
+                            ${teacherPosts.map(post => `
+                                <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px;">
+                                    <p>${post.content}</p>
+                                    <p style="color: #666; font-size: 0.9rem;">📅 ${post.date} | ❤️ ${post.likes}</p>
+                                </div>
+                            `).join('')}
                         </div>
                     </div>
                 </div>
             `;
         }
 
-        function renderTeacherDashboard() {
-            const teacher = teachers.find(t => t.id === currentUser.id);
+        // ========== عرض صفحة الدرس ==========
+        function viewLesson(lessonId) {
+            viewingLesson = lessonId;
+            const lesson = TeacherSection.lessons.find(l => l.id === lessonId);
+            const teacher = TeacherSection.teachers.find(t => t.id === lesson.teacherId);
+            const student = StudentSection.students.find(s => s.id === currentUser?.id);
+            const isSaved = student?.savedLessons.includes(lessonId);
+            const comments = StudentSection.getLessonComments(lessonId);
+            const avgRating = StudentSection.getLessonAverageRating(lessonId);
+            const userRating = student ? StudentSection.getStudentRating(student.id, lessonId) : 0;
+            
+            lesson.views += 1;
+            TeacherSection.saveToStorage();
             
             document.getElementById('dashboard').innerHTML = `
-                <div class="welcome-card">
-                    <h1 class="welcome-title">مرحباً بك أ. ${teacher.name} 👨‍🏫</h1>
-                    <p>${teacher.bio}</p>
-                </div>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-users"></i></div>
-                        <div><div class="stat-value">${teacher.followers?.length || 0}</div><div>متابع</div></div>
+                <div style="background: white; border-radius: 20px; padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h1 style="color: #1e3c72;">${lesson.title}</h1>
+                        <button class="nav-btn" onclick="goHome()">رجوع</button>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-star"></i></div>
-                        <div><div class="stat-value">${teacher.rating}</div><div>تقييم</div></div>
+                    
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <div style="flex: 2;">
+                            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 15px;">
+                                <p><strong>الأستاذ:</strong> ${teacher.name}</p>
+                                <p><strong>المادة:</strong> ${teacher.specialty}</p>
+                                <p><strong>المستوى:</strong> ${getLevelName(lesson.level)}</p>
+                                <p><strong>الوصف:</strong> ${lesson.description}</p>
+                                <div style="display: flex; gap: 2rem; margin-top: 1rem;">
+                                    <span><i class="fas fa-eye"></i> ${lesson.views} مشاهدة</span>
+                                    <span><i class="fas fa-download"></i> ${lesson.downloads} تحميل</span>
+                                    <span><i class="fas fa-star" style="color: #ffd700;"></i> ${avgRating}</span>
+                                </div>
+                                
+                                <div style="margin-top: 1rem;">
+                                    <p><strong>تقييمك:</strong></p>
+                                    <div class="rating-stars" id="ratingStars">
+                                        ${[1,2,3,4,5].map(star => `
+                                            <span onclick="rateLesson(${lesson.id}, ${star})" 
+                                                  style="cursor: pointer; ${star <= userRating ? 'color: #ffd700;' : ''}">
+                                                ${star <= userRating ? '★' : '☆'}
+                                            </span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                                    <button class="nav-btn" style="background: #1e3c72; color: white; flex: 1;" 
+                                        onclick="downloadLesson(${lesson.id})">
+                                        <i class="fas fa-download"></i> تحميل
+                                    </button>
+                                    <button class="nav-btn" style="background: ${isSaved ? '#28a745' : '#ffd700'}; color: ${isSaved ? 'white' : '#1e3c72'}; flex: 1;" 
+                                        onclick="toggleSaveLesson(${lesson.id})">
+                                        <i class="fas ${isSaved ? 'fa-check' : 'fa-bookmark'}"></i> 
+                                        ${isSaved ? 'محفوظ' : 'حفظ'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="flex: 1;">
+                            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 15px;">
+                                <h3 style="color: #1e3c72; margin-bottom: 1rem;">معلومات إضافية</h3>
+                                ${lesson.type === 'video' ? `
+                                    <p><i class="fas fa-video"></i> مدة الفيديو: ${lesson.duration}</p>
+                                ` : `
+                                    <p><i class="fas fa-file-pdf"></i> عدد الصفحات: ${lesson.pages}</p>
+                                    <p><i class="fas fa-weight-hanging"></i> حجم الملف: ${lesson.size}</p>
+                                `}
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-book"></i></div>
-                        <div><div class="stat-value">${lessons.filter(l => l.teacherId === teacher.id).length}</div><div>درس</div></div>
+                    
+                    <div class="comments-section">
+                        <h3 style="color: #1e3c72; margin-bottom: 1rem;">
+                            <i class="fas fa-comments"></i> التعليقات (${comments.length})
+                        </h3>
+                        
+                        <div id="commentsList">
+                            ${comments.map(comment => {
+                                const commenter = StudentSection.students.find(s => s.id === comment.studentId);
+                                return `
+                                    <div class="comment">
+                                        <div class="comment-header">
+                                            <span class="comment-author">${commenter.name}</span>
+                                            <span class="comment-date">${comment.date}</span>
+                                        </div>
+                                        <div class="comment-text">${comment.text}</div>
+                                        <div class="comment-actions">
+                                            <span onclick="likeComment(${comment.id})">
+                                                <i class="fas fa-heart"></i> ${comment.likes}
+                                            </span>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                        
+                        ${currentUser?.type === 'student' ? `
+                            <div class="add-comment">
+                                <textarea id="commentText" rows="3" placeholder="اكتب تعليقك..."></textarea>
+                                <button onclick="addComment(${lesson.id})">إضافة تعليق</button>
+                            </div>
+                        ` : ''}
                     </div>
                 </div>
             `;
         }
 
+        // ========== تقييم درس ==========
+        function rateLesson(lessonId, rating) {
+            const student = StudentSection.students.find(s => s.id === currentUser.id);
+            StudentSection.rateLesson(student.id, lessonId, rating);
+            StudentSection.saveToStorage();
+            viewLesson(lessonId);
+            showToast('تم تقييم الدرس +3 نقاط');
+        }
+
+        // ========== إضافة تعليق ==========
+        function addComment(lessonId) {
+            const text = document.getElementById('commentText').value;
+            if (!text.trim()) {
+                showToast('الرجاء كتابة تعليق', 'error');
+                return;
+            }
+            
+            StudentSection.addComment(currentUser.id, lessonId, text);
+            StudentSection.saveToStorage();
+            viewLesson(lessonId);
+            showToast('تم إضافة التعليق +2 نقاط');
+        }
+
+        // ========== الإعجاب بتعليق ==========
+        function likeComment(commentId) {
+            const comment = StudentSection.comments.find(c => c.id === commentId);
+            comment.likes += 1;
+            StudentSection.saveToStorage();
+            viewLesson(comment.lessonId);
+        }
+
+        // ========== تحميل درس ==========
+        function downloadLesson(lessonId) {
+            const lesson = TeacherSection.lessons.find(l => l.id === lessonId);
+            lesson.downloads += 1;
+            TeacherSection.saveToStorage();
+            
+            if (currentUser?.type === 'student') {
+                const student = StudentSection.students.find(s => s.id === currentUser.id);
+                student.points += 3;
+                StudentSection.saveToStorage();
+            }
+            
+            showToast('جاري تحميل الدرس...');
+        }
+
+        // ========== صفحة الأستاذ لنفسه ==========
+        function showTeacherProfile() {
+            const teacher = TeacherSection.teachers.find(t => t.id === currentUser.id);
+            viewTeacherProfile(teacher.id);
+        }
+
+        // ========== إضافة درس جديد ==========
+        function showAddLessonForm() {
+            showModal(`
+                <h2 style="color: #1e3c72;">إضافة درس جديد</h2>
+                <div class="form-group">
+                    <input type="text" id="lessonTitle" placeholder="عنوان الدرس">
+                </div>
+                <div class="form-group">
+                    <textarea id="lessonDesc" rows="3" placeholder="وصف الدرس"></textarea>
+                </div>
+                <div class="form-group">
+                    <select id="lessonType">
+                        <option value="video">فيديو</option>
+                        <option value="pdf">PDF</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select id="lessonLevel">
+                        <option value="bac1">الأولى باكالوريا</option>
+                        <option value="bac2">الثانية باكالوريا</option>
+                    </select>
+                </div>
+                <button class="submit-btn" onclick="addNewLesson()">نشر الدرس</button>
+            `);
+        }
+
+        function addNewLesson() {
+            const title = document.getElementById('lessonTitle').value;
+            const desc = document.getElementById('lessonDesc').value;
+            const type = document.getElementById('lessonType').value;
+            const level = document.getElementById('lessonLevel').value;
+            
+            if (!title || !desc) {
+                showToast('الرجاء ملء جميع الحقول', 'error');
+                return;
+            }
+            
+            const lessonData = {
+                title: title,
+                description: desc,
+                level: level,
+                type: type,
+                ...(type === 'video' ? { duration: '00:00' } : { pages: 1, size: '1 MB' })
+            };
+            
+            TeacherSection.addLesson(currentUser.id, lessonData);
+            TeacherSection.saveToStorage();
+            closeModal();
+            renderTeacherDashboard();
+            showToast('تم إضافة الدرس بنجاح');
+        }
+
+        // ========== إضافة منشور جديد ==========
+        function showAddPostForm() {
+            showModal(`
+                <h2 style="color: #1e3c72;">إضافة منشور جديد</h2>
+                <div class="form-group">
+                    <textarea id="postContent" rows="5" placeholder="محتوى المنشور"></textarea>
+                </div>
+                <button class="submit-btn" onclick="addNewPost()">نشر</button>
+            `);
+        }
+
+        function addNewPost() {
+            const content = document.getElementById('postContent').value;
+            if (!content.trim()) {
+                showToast('الرجاء كتابة محتوى المنشور', 'error');
+                return;
+            }
+            
+            TeacherSection.addPost(currentUser.id, content);
+            TeacherSection.saveToStorage();
+            closeModal();
+            renderTeacherDashboard();
+            showToast('تم نشر المنشور بنجاح');
+        }
+
+        // ========== المصادقة ==========
         function showAuthModal() {
             showModal(`
                 <h2 style="color: #1e3c72; text-align: center;">مرحباً بك</h2>
@@ -401,6 +941,9 @@
                     <div class="form-group">
                         <input type="text" id="regSpecialty" placeholder="الاختصاص">
                     </div>
+                    <div class="form-group">
+                        <textarea id="regBio" rows="3" placeholder="نبذة عنك"></textarea>
+                    </div>
                 ` : ''}
                 <button class="submit-btn" onclick="handleRegister()">تسجيل</button>
                 <p style="text-align: center; margin-top: 1rem;">
@@ -420,9 +963,9 @@
 
             let user;
             if (selectedUserType === 'teacher') {
-                user = teachers.find(t => t.email === email && t.password === password);
+                user = TeacherSection.teachers.find(t => t.email === email && t.password === password);
             } else {
-                user = students.find(s => s.email === email && s.password === password);
+                user = StudentSection.students.find(s => s.email === email && s.password === password);
             }
 
             if (user) {
@@ -446,32 +989,35 @@
             }
 
             if (selectedUserType === 'teacher') {
-                if (teachers.find(t => t.email === email)) {
+                if (TeacherSection.teachers.find(t => t.email === email)) {
                     showToast('البريد موجود مسبقاً', 'error');
                     return;
                 }
 
                 const newTeacher = {
-                    id: teachers.length + 1,
+                    id: TeacherSection.teachers.length + 1,
                     name, email, password,
                     specialty: document.getElementById('regSpecialty')?.value || 'أستاذ',
-                    bio: 'أستاذ جديد',
+                    bio: document.getElementById('regBio')?.value || 'أستاذ جديد',
                     avatar: ['👨‍🏫', '👩‍🏫', '📚', '🔬'][Math.floor(Math.random() * 4)],
                     rating: 0,
-                    followers: []
+                    followers: [],
+                    lessons: [],
+                    students: 0
                 };
 
-                teachers.push(newTeacher);
+                TeacherSection.teachers.push(newTeacher);
+                TeacherSection.saveToStorage();
                 currentUser = { id: newTeacher.id, name, type: 'teacher' };
 
             } else {
-                if (students.find(s => s.email === email)) {
+                if (StudentSection.students.find(s => s.email === email)) {
                     showToast('البريد موجود مسبقاً', 'error');
                     return;
                 }
 
                 const newStudent = {
-                    id: students.length + 1,
+                    id: StudentSection.students.length + 1,
                     name, email, password,
                     level: 'bac1',
                     following: [],
@@ -480,7 +1026,8 @@
                     streak: 0
                 };
 
-                students.push(newStudent);
+                StudentSection.students.push(newStudent);
+                StudentSection.saveToStorage();
                 currentUser = { id: newStudent.id, name, type: 'student' };
             }
 
@@ -491,13 +1038,15 @@
 
         function logout() {
             currentUser = null;
-            viewingChannel = null;
+            viewingTeacher = null;
+            viewingLesson = null;
             renderUI();
             showToast('تم تسجيل الخروج');
         }
 
         function goHome() {
-            viewingChannel = null;
+            viewingTeacher = null;
+            viewingLesson = null;
             renderUI();
         }
 
