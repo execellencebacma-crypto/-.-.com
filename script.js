@@ -2,12 +2,12 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلّم.ما - نظام التعليقات التفاعلي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>تعلّم.ما - نسخة الجوال المحسنة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#333;min-height:100vh}.navbar{background:rgba(30,60,114,0.95);backdrop-filter:blur(10px);color:#fff;padding:1rem 5%;position:sticky;top:0;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}.logo{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#fff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer}.nav-menu{display:flex;gap:1rem;align-items:center}.nav-btn{background:transparent;border:2px solid rgba(255,255,255,0.2);color:#fff;padding:0.6rem 1.5rem;border-radius:50px;cursor:pointer;transition:all 0.3s ease}.nav-btn:hover{background:#fff;color:#1e3c72;transform:translateY(-2px)}.user-badge{background:rgba(255,255,255,0.1);padding:0.5rem 1.5rem;border-radius:50px;color:#fff;display:flex;align-items:center;gap:0.5rem}.dashboard{max-width:1400px;margin:2rem auto;padding:0 2rem}.welcome-card{background:linear-gradient(135deg,#1e3c72,#0f2b4f);color:#fff;padding:2rem;border-radius:15px;margin-bottom:2rem;position:relative;overflow:hidden}.welcome-card::before{content:'📚';position:absolute;font-size:8rem;opacity:0.1;left:-20px;bottom:-20px;transform:rotate(-15deg)}.welcome-title{font-size:2rem;margin-bottom:1rem}.welcome-stats{display:flex;gap:2rem;flex-wrap:wrap}.welcome-stat{display:flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);padding:0.5rem 1rem;border-radius:50px}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}.stat-card{background:#fff;padding:1.5rem;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;align-items:center;gap:1rem;transition:all 0.3s ease}.stat-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}.stat-icon{width:50px;height:50px;background:#1e3c72;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem}.stat-value{font-size:2rem;font-weight:800;color:#1e3c72;line-height:1}.teachers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}.teacher-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease;cursor:pointer}.teacher-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}.teacher-header{height:80px;background:linear-gradient(135deg,#1e3c72,#2a5298)}.teacher-avatar{width:100px;height:100px;background:#fff;border-radius:50%;margin:-50px auto 0;display:flex;align-items:center;justify-content:center;font-size:3rem;border:4px solid #fff}.teacher-info{padding:1.5rem;text-align:center}.teacher-name{font-size:1.5rem;color:#1e3c72}.teacher-specialty{color:#e6b800;margin:0.5rem 0}.teacher-bio{color:#666;font-size:0.9rem;margin-bottom:1rem}.teacher-stats{display:flex;justify-content:center;gap:1rem;margin:1rem 0}.stat-badge{background:#f8f9fa;padding:0.3rem 1rem;border-radius:50px;font-size:0.9rem;display:flex;align-items:center;gap:0.3rem}.follow-btn{width:100%;padding:0.8rem;border:none;border-radius:50px;background:#1e3c72;color:#fff;font-weight:600;cursor:pointer;transition:all 0.3s ease;margin-top:1rem}.follow-btn.following{background:#28a745}.student-tabs{display:flex;gap:1rem;margin:2rem 0;flex-wrap:wrap}.tab-btn{padding:0.8rem 2rem;border:none;background:rgba(255,255,255,0.1);color:#fff;border-radius:50px;cursor:pointer;font-size:1rem;font-weight:600;transition:all 0.3s ease}.tab-btn:hover,.tab-btn.active{background:#ffd700;color:#1e3c72}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:2000;justify-content:center;align-items:center}.modal-content{background:#fff;width:90%;max-width:600px;max-height:80vh;overflow-y:auto;padding:2rem;border-radius:15px;position:relative;animation:modalZoom 0.3s ease}@keyframes modalZoom{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}.modal-close{position:absolute;left:1rem;top:1rem;font-size:1.5rem;cursor:pointer;width:30px;height:30px;background:#f8f9fa;border-radius:50%;display:flex;align-items:center;justify-content:center}.modal-close:hover{background:#dc3545;color:#fff}.form-group{margin-bottom:1rem}.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem;border:2px solid #e9ecef;border-radius:5px;font-family:'Cairo',sans-serif}.submit-btn{width:100%;padding:1rem;background:#1e3c72;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:1.1rem;transition:all 0.3s ease}.submit-btn:hover{background:#2a5298;transform:translateY(-2px)}.user-type-selector{display:flex;gap:1rem;margin:1rem 0}.user-type-btn{flex:1;padding:1rem;border:2px solid #1e3c72;background:transparent;color:#1e3c72;border-radius:50px;cursor:pointer;font-weight:600;transition:all 0.3s ease}.user-type-btn:hover{background:rgba(30,60,114,0.1)}.user-type-btn.active{background:#1e3c72;color:#fff}.toast{position:fixed;bottom:20px;right:20px;background:#fff;padding:1rem 2rem;border-radius:50px;box-shadow:0 4px 12px rgba(0,0,0,0.1);border-right:4px solid #28a745;z-index:3000;animation:slideIn 0.3s ease}@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}.toast.error{border-right-color:#dc3545}.lessons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:1rem}.lesson-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease}.lesson-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}.lesson-header{height:120px;background:linear-gradient(135deg,#1e3c72,#2a5298);display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff}.lesson-content{padding:1.5rem}.lesson-title{font-size:1.2rem;color:#1e3c72;margin-bottom:0.5rem}.lesson-meta{display:flex;gap:1rem;color:#666;font-size:0.9rem;margin:0.5rem 0}.lesson-actions{display:flex;gap:0.5rem;margin-top:1rem}.lesson-btn{flex:1;padding:0.5rem;border:none;border-radius:5px;cursor:pointer;font-weight:600}.view-btn{background:#1e3c72;color:#fff}.save-btn{background:#ffd700;color:#1e3c72}.save-btn.saved{background:#28a745;color:#fff}.comments-section{margin-top:2rem;border-top:2px solid #e9ecef;padding-top:1.5rem}.comments-title{font-size:1.3rem;color:#1e3c72;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}.comment{background:#f8f9fa;border-radius:10px;padding:1rem;margin-bottom:1rem;border-right:3px solid #1e3c72}.comment-header{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem}.comment-avatar{width:30px;height:30px;background:#1e3c72;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem}.comment-author{font-weight:600;color:#1e3c72}.comment-date{color:#666;font-size:0.8rem;margin-right:auto}.comment-text{color:#333;line-height:1.6;margin-bottom:0.5rem}.comment-actions{display:flex;gap:1rem;color:#666;font-size:0.9rem}.comment-actions span{cursor:pointer;display:flex;align-items:center;gap:0.3rem;transition:all 0.2s ease}.comment-actions span:hover{color:#1e3c72}.comment-actions .liked{color:#e63946}.add-comment{background:#f8f9fa;border-radius:10px;padding:1rem;margin-top:1rem}.add-comment textarea{width:100%;padding:0.8rem;border:2px solid #e9ecef;border-radius:5px;margin-bottom:0.5rem;resize:vertical}.add-comment button{background:#1e3c72;color:#fff;border:none;padding:0.6rem 1.5rem;border-radius:5px;cursor:pointer;transition:all 0.3s ease}.add-comment button:hover{background:#2a5298;transform:translateY(-2px)}.channel-page{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.channel-cover{height:200px;background:linear-gradient(135deg,#1e3c72,#2a5298);position:relative}.channel-avatar-large{width:120px;height:120px;background:#fff;border-radius:50%;position:absolute;bottom:-60px;right:30px;display:flex;align-items:center;justify-content:center;font-size:4rem;border:4px solid #ffd700}.channel-info{padding:4rem 2rem 2rem}.channel-name{font-size:2rem;color:#1e3c72}.channel-meta{display:flex;gap:2rem;margin:1rem 0}.channel-actions{display:flex;gap:1rem;margin-top:1rem}@media (max-width:768px){.nav-container{flex-direction:column;gap:1rem}.student-tabs{flex-direction:column}.tab-btn{width:100%}.teachers-grid{grid-template-columns:1fr}.channel-avatar-large{right:50%;transform:translateX(50%)}.channel-info{text-align:center}.channel-meta{justify-content:center}.channel-actions{flex-direction:column}}
+        *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{font-family:'Cairo',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#333;min-height:100vh;overflow-x:hidden}.navbar{background:rgba(30,60,114,0.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;padding:0.8rem 4%;position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.1)}.nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}.logo{font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,#fff,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer}.nav-menu{display:flex;gap:0.5rem;align-items:center}.nav-btn{background:transparent;border:2px solid rgba(255,255,255,0.2);color:#fff;padding:0.5rem 1rem;border-radius:50px;cursor:pointer;font-size:0.9rem;font-weight:600;transition:all 0.3s ease;white-space:nowrap}.nav-btn:hover{background:#fff;color:#1e3c72;transform:translateY(-2px)}.nav-btn:active{transform:scale(0.95)}.user-badge{background:rgba(255,255,255,0.1);padding:0.4rem 1rem;border-radius:50px;color:#fff;display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;white-space:nowrap}.dashboard{max-width:1400px;margin:1.5rem auto;padding:0 1rem}.welcome-card{background:linear-gradient(135deg,#1e3c72,#0f2b4f);color:#fff;padding:1.5rem;border-radius:20px;margin-bottom:1.5rem;position:relative;overflow:hidden}.welcome-card::before{content:'📚';position:absolute;font-size:6rem;opacity:0.1;left:-10px;bottom:-10px;transform:rotate(-15deg)}.welcome-title{font-size:1.8rem;margin-bottom:0.8rem;line-height:1.3}.welcome-stats{display:flex;gap:1rem;flex-wrap:wrap}.welcome-stat{display:flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);padding:0.4rem 1rem;border-radius:50px;font-size:0.9rem}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:1.5rem}.stat-card{background:#fff;padding:1.2rem;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;align-items:center;gap:0.8rem;transition:all 0.3s ease}.stat-card:active{transform:scale(0.98)}.stat-icon{width:40px;height:40px;background:#1e3c72;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem}.stat-value{font-size:1.5rem;font-weight:800;color:#1e3c72;line-height:1}.teachers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}.teacher-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease;cursor:pointer}.teacher-card:active{transform:scale(0.98)}.teacher-header{height:70px;background:linear-gradient(135deg,#1e3c72,#2a5298)}.teacher-avatar{width:90px;height:90px;background:#fff;border-radius:50%;margin:-45px auto 0;display:flex;align-items:center;justify-content:center;font-size:2.8rem;border:4px solid #fff}.teacher-info{padding:1.2rem;text-align:center}.teacher-name{font-size:1.3rem;color:#1e3c72;margin-bottom:0.3rem}.teacher-specialty{color:#e6b800;margin:0.3rem 0;font-size:1rem}.teacher-bio{color:#666;font-size:0.85rem;margin-bottom:0.8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.teacher-stats{display:flex;justify-content:center;gap:0.8rem;margin:0.8rem 0}.stat-badge{background:#f8f9fa;padding:0.3rem 0.8rem;border-radius:50px;font-size:0.85rem;display:flex;align-items:center;gap:0.3rem}.follow-btn{width:100%;padding:0.7rem;border:none;border-radius:50px;background:#1e3c72;color:#fff;font-weight:600;cursor:pointer;transition:all 0.3s ease;margin-top:0.5rem;font-size:0.95rem}.follow-btn:active{transform:scale(0.95)}.follow-btn.following{background:#28a745}.student-tabs{display:flex;gap:0.5rem;margin:1.5rem 0;flex-wrap:wrap}.tab-btn{padding:0.6rem 1.2rem;border:none;background:rgba(255,255,255,0.1);color:#fff;border-radius:50px;cursor:pointer;font-size:0.9rem;font-weight:600;transition:all 0.3s ease;flex:1 1 auto}.tab-btn:active{transform:scale(0.95)}.tab-btn:hover,.tab-btn.active{background:#ffd700;color:#1e3c72}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:2000;justify-content:center;align-items:center;padding:1rem}.modal-content{background:#fff;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;padding:1.5rem;border-radius:20px;position:relative;animation:modalZoom 0.3s ease}@keyframes modalZoom{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}.modal-close{position:absolute;left:1rem;top:1rem;font-size:1.3rem;cursor:pointer;width:35px;height:35px;background:#f8f9fa;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10}.modal-close:active{background:#dc3545;color:#fff}.form-group{margin-bottom:1rem}.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem;border:2px solid #e9ecef;border-radius:10px;font-family:'Cairo',sans-serif;font-size:1rem;-webkit-appearance:none}.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#1e3c72}.submit-btn{width:100%;padding:1rem;background:#1e3c72;color:#fff;border:none;border-radius:50px;cursor:pointer;font-size:1rem;font-weight:600;transition:all 0.3s ease}.submit-btn:active{transform:scale(0.95)}.user-type-selector{display:flex;gap:0.5rem;margin:1rem 0}.user-type-btn{flex:1;padding:0.8rem;border:2px solid #1e3c72;background:transparent;color:#1e3c72;border-radius:50px;cursor:pointer;font-weight:600;transition:all 0.3s ease;font-size:0.95rem}.user-type-btn:active{transform:scale(0.95)}.user-type-btn.active{background:#1e3c72;color:#fff}.toast{position:fixed;bottom:20px;right:20px;left:20px;background:#fff;padding:1rem;border-radius:50px;box-shadow:0 4px 12px rgba(0,0,0,0.1);border-right:4px solid #28a745;z-index:3000;animation:slideIn 0.3s ease;text-align:center;font-size:0.95rem}@keyframes slideIn{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}.toast.error{border-right-color:#dc3545}.lessons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:1rem}.lesson-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease}.lesson-card:active{transform:scale(0.98)}.lesson-header{height:100px;background:linear-gradient(135deg,#1e3c72,#2a5298);display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#fff}.lesson-content{padding:1.2rem}.lesson-title{font-size:1.1rem;color:#1e3c72;margin-bottom:0.5rem}.lesson-meta{display:flex;gap:0.8rem;color:#666;font-size:0.85rem;margin:0.5rem 0;flex-wrap:wrap}.lesson-actions{display:flex;gap:0.5rem;margin-top:0.8rem}.lesson-btn{flex:1;padding:0.5rem;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.9rem}.lesson-btn:active{transform:scale(0.95)}.view-btn{background:#1e3c72;color:#fff}.save-btn{background:#ffd700;color:#1e3c72}.save-btn.saved{background:#28a745;color:#fff}.comments-section{margin-top:1.5rem;border-top:2px solid #e9ecef;padding-top:1rem}.comments-title{font-size:1.2rem;color:#1e3c72;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}.comment{background:#f8f9fa;border-radius:12px;padding:1rem;margin-bottom:1rem;border-right:3px solid #1e3c72}.comment-header{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;flex-wrap:wrap}.comment-avatar{width:28px;height:28px;background:#1e3c72;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.9rem}.comment-author{font-weight:600;color:#1e3c72;font-size:0.95rem}.comment-date{color:#666;font-size:0.8rem;margin-right:auto}.comment-text{color:#333;line-height:1.5;margin-bottom:0.5rem;font-size:0.95rem}.comment-actions{display:flex;gap:1rem;color:#666;font-size:0.85rem}.comment-actions span{cursor:pointer;display:flex;align-items:center;gap:0.3rem;padding:0.3rem 0}.comment-actions span:active{color:#1e3c72}.comment-actions .liked{color:#e63946}.add-comment{background:#f8f9fa;border-radius:12px;padding:1rem;margin-top:1rem}.add-comment textarea{width:100%;padding:0.8rem;border:2px solid #e9ecef;border-radius:8px;margin-bottom:0.5rem;resize:vertical;font-size:0.95rem}.add-comment button{background:#1e3c72;color:#fff;border:none;padding:0.6rem 1.2rem;border-radius:8px;cursor:pointer;transition:all 0.3s ease;font-size:0.95rem;width:100%}.add-comment button:active{transform:scale(0.95)}.channel-page{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.channel-cover{height:150px;background:linear-gradient(135deg,#1e3c72,#2a5298);position:relative}.channel-avatar-large{width:100px;height:100px;background:#fff;border-radius:50%;position:absolute;bottom:-50px;right:20px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;border:4px solid #ffd700;box-shadow:0 4px 12px rgba(0,0,0,0.2)}.channel-info{padding:3.5rem 1.2rem 1.2rem}.channel-name{font-size:1.6rem;color:#1e3c72;margin-bottom:0.3rem}.channel-specialty{color:#e6b800;font-size:1rem;margin-bottom:0.5rem}.channel-bio{color:#666;font-size:0.9rem;margin-bottom:1rem;line-height:1.5}.channel-meta{display:flex;gap:1.5rem;margin:1rem 0;flex-wrap:wrap}.channel-meta-item{text-align:center}.channel-meta-value{font-size:1.3rem;font-weight:800;color:#1e3c72}.channel-meta-label{color:#666;font-size:0.85rem}.channel-actions{display:flex;gap:0.8rem;margin-top:1.2rem;flex-wrap:wrap}.channel-btn{flex:1;padding:0.8rem;border:none;border-radius:50px;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;min-width:120px}.channel-btn:active{transform:scale(0.95)}.channel-btn-primary{background:#1e3c72;color:#fff}.channel-btn-secondary{background:#ffd700;color:#1e3c72}.no-data{text-align:center;padding:2rem;background:rgba(255,255,255,0.1);border-radius:15px;color:#fff}.no-data i{font-size:3rem;margin-bottom:1rem;opacity:0.5}.no-data h3{font-size:1.3rem;margin-bottom:0.5rem}.no-data p{font-size:0.9rem;opacity:0.8}@media (max-width:480px){.navbar{padding:0.6rem 3%}.logo{font-size:1.5rem}.nav-btn{padding:0.4rem 0.8rem;font-size:0.8rem}.user-badge{padding:0.3rem 0.8rem;font-size:0.8rem}.dashboard{padding:0 0.8rem}.welcome-title{font-size:1.5rem}.welcome-stat{font-size:0.85rem;padding:0.3rem 0.8rem}.stat-card{padding:1rem}.stat-icon{width:35px;height:35px;font-size:1rem}.stat-value{font-size:1.3rem}.teachers-grid{gap:1rem}.teacher-avatar{width:80px;height:80px;font-size:2.5rem}.teacher-name{font-size:1.2rem}.teacher-specialty{font-size:0.95rem}.tab-btn{padding:0.5rem 1rem;font-size:0.85rem}.modal-content{padding:1.2rem}.form-group input,.form-group select,.form-group textarea{padding:0.7rem;font-size:0.95rem}.submit-btn{padding:0.8rem;font-size:0.95rem}.user-type-btn{padding:0.7rem;font-size:0.9rem}.lesson-header{height:90px;font-size:2.2rem}.lesson-title{font-size:1rem}.lesson-meta{font-size:0.8rem}.lesson-btn{font-size:0.85rem;padding:0.4rem}.comments-title{font-size:1.1rem}.comment{padding:0.8rem}.comment-author{font-size:0.9rem}.comment-text{font-size:0.9rem}.add-comment textarea{font-size:0.9rem}.add-comment button{font-size:0.9rem}.channel-avatar-large{width:80px;height:80px;font-size:3rem;bottom:-40px}.channel-info{padding:3rem 1rem 1rem}.channel-name{font-size:1.4rem}.channel-specialty{font-size:0.95rem}.channel-bio{font-size:0.85rem}.channel-meta-value{font-size:1.2rem}.channel-btn{font-size:0.9rem;padding:0.7rem}}@media (max-width:360px){.welcome-stats{flex-direction:column;gap:0.5rem}.welcome-stat{width:100%}.student-tabs{flex-direction:column}.tab-btn{width:100%}.stats-grid{grid-template-columns:1fr}.teacher-stats{flex-direction:column;align-items:center}.stat-badge{width:100%;justify-content:center}.channel-meta{flex-direction:column;align-items:center;gap:0.8rem}.channel-actions{flex-direction:column}.channel-btn{width:100%}}@media (min-width:768px) and (max-width:1024px){.teachers-grid{grid-template-columns:repeat(2,1fr)}.welcome-title{font-size:2rem}.stat-value{font-size:1.8rem}}@media (hover:none) and (pointer:coarse){.nav-btn:hover,.tab-btn:hover,.follow-btn:hover,.lesson-btn:hover,.submit-btn:hover,.channel-btn:hover{transform:none}.nav-btn:active,.tab-btn:active,.follow-btn:active,.lesson-btn:active,.submit-btn:active,.channel-btn:active{transform:scale(0.95)}}
     </style>
 </head>
 <body>
@@ -198,7 +198,7 @@
             const followingTeachers = teachers.filter(t => student.following?.includes(t.id));
             
             if (followingTeachers.length === 0) {
-                return '<p style="color: white; text-align: center;">لم تتابع أي أستاذ بعد</p>';
+                return '<div class="no-data"><i class="fas fa-heart"></i><h3>لم تتابع أي أستاذ بعد</h3><p>تابع الأساتذة لمشاهدة دروسهم</p></div>';
             }
             
             return `
@@ -322,18 +322,21 @@
             lesson.views += 1;
             
             document.getElementById('dashboard').innerHTML = `
-                <div style="background: white; border-radius: 15px; padding: 2rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                        <h1 style="color: #1e3c72;">${lesson.title}</h1>
-                        <button class="nav-btn" onclick="goHome()">رجوع</button>
+                <div style="background: white; border-radius: 20px; padding: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h1 style="color: #1e3c72; font-size: 1.4rem;">${lesson.title}</h1>
+                        <button class="nav-btn" onclick="goHome()" style="font-size: 0.9rem;">رجوع</button>
                     </div>
                     
-                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
-                        <p><strong>الأستاذ:</strong> ${teacher?.name}</p>
-                        <p><strong>المادة:</strong> ${teacher?.specialty}</p>
-                        <p><strong>المستوى:</strong> ${getLevelName(lesson.level)}</p>
-                        <p><strong>المشاهدات:</strong> ${lesson.views}</p>
-                        <p><strong>التحميلات:</strong> ${lesson.downloads}</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <p style="margin-bottom: 0.3rem;"><strong>الأستاذ:</strong> ${teacher?.name}</p>
+                        <p style="margin-bottom: 0.3rem;"><strong>المادة:</strong> ${teacher?.specialty}</p>
+                        <p style="margin-bottom: 0.3rem;"><strong>المستوى:</strong> ${getLevelName(lesson.level)}</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                            <span><i class="fas fa-eye"></i> ${lesson.views}</span>
+                            <span><i class="fas fa-download"></i> ${lesson.downloads}</span>
+                            <span><i class="fas fa-comment"></i> ${lessonComments.length}</span>
+                        </div>
                     </div>
                     
                     <div class="comments-section">
@@ -348,7 +351,7 @@
                         
                         ${currentUser ? `
                             <div class="add-comment">
-                                <textarea id="commentText" rows="3" placeholder="اكتب تعليقك..."></textarea>
+                                <textarea id="commentText" rows="2" placeholder="اكتب تعليقك..."></textarea>
                                 <button onclick="addComment(${lessonId})">إضافة تعليق</button>
                             </div>
                         ` : ''}
@@ -359,7 +362,7 @@
 
         function renderComments(comments) {
             if (comments.length === 0) {
-                return '<p style="color: #666; text-align: center;">لا توجد تعليقات بعد. كن أول من يعلق!</p>';
+                return '<p style="color: #666; text-align: center; padding: 1rem;">لا توجد تعليقات بعد. كن أول من يعلق!</p>';
             }
             
             return comments.sort((a, b) => new Date(b.date) - new Date(a.date)).map(comment => `
@@ -409,7 +412,6 @@
             comments.push(newComment);
             saveComments();
             
-            // منح نقاط للتلميذ
             if (currentUser.type === 'student') {
                 const student = students.find(s => s.id === currentUser.id);
                 student.points += 2;
@@ -446,7 +448,7 @@
 
         function replyToComment(commentId) {
             showModal(`
-                <h2 style="color: #1e3c72;">الرد على التعليق</h2>
+                <h2 style="color: #1e3c72; font-size: 1.3rem;">الرد على التعليق</h2>
                 <div class="form-group">
                     <textarea id="replyText" rows="3" placeholder="اكتب ردك..."></textarea>
                 </div>
@@ -473,23 +475,39 @@
             const teacherLessons = lessons.filter(l => l.teacherId === teacherId);
             
             document.getElementById('dashboard').innerHTML = `
-                <div style="background: white; border-radius: 15px; padding: 2rem;">
-                    <div style="display: flex; gap: 2rem; align-items: center;">
-                        <div style="font-size: 5rem;">${teacher.avatar}</div>
-                        <div>
-                            <h1>${teacher.name}</h1>
-                            <p style="color: #e6b800;">${teacher.specialty}</p>
-                            <p>${teacher.bio}</p>
-                            <p>👥 ${teacher.followers?.length || 0} متابع</p>
-                            <p>⭐ ${teacher.rating}</p>
-                            <p>📚 ${teacherLessons.length} درس</p>
+                <div class="channel-page">
+                    <div class="channel-cover">
+                        <div class="channel-avatar-large">${teacher.avatar}</div>
+                    </div>
+                    <div class="channel-info">
+                        <h2 class="channel-name">${teacher.name}</h2>
+                        <p class="channel-specialty">${teacher.specialty}</p>
+                        <p class="channel-bio">${teacher.bio}</p>
+                        
+                        <div class="channel-meta">
+                            <div class="channel-meta-item">
+                                <div class="channel-meta-value">${teacher.followers?.length || 0}</div>
+                                <div class="channel-meta-label">متابع</div>
+                            </div>
+                            <div class="channel-meta-item">
+                                <div class="channel-meta-value">${teacherLessons.length}</div>
+                                <div class="channel-meta-label">درس</div>
+                            </div>
+                            <div class="channel-meta-item">
+                                <div class="channel-meta-value">${teacher.rating}</div>
+                                <div class="channel-meta-label">تقييم</div>
+                            </div>
+                        </div>
+                        
+                        <div class="channel-actions">
                             ${currentUser?.type === 'student' ? `
-                                <button class="nav-btn" style="background: #1e3c72; color: white; margin-left: 1rem;" 
-                                    onclick="toggleFollow(${teacher.id})">
+                                <button class="channel-btn channel-btn-primary" onclick="toggleFollow(${teacher.id})">
                                     ${isFollowing ? '✓ متابعة' : '+ متابعة'}
                                 </button>
                             ` : ''}
-                            <button class="nav-btn" onclick="goHome()">رجوع</button>
+                            <button class="channel-btn channel-btn-secondary" onclick="goHome()">
+                                رجوع
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -524,7 +542,7 @@
 
         function showAuthModal() {
             showModal(`
-                <h2 style="color: #1e3c72; text-align: center;">مرحباً بك</h2>
+                <h2 style="color: #1e3c72; text-align: center; font-size: 1.4rem;">مرحباً بك</h2>
                 <div class="user-type-selector">
                     <button class="user-type-btn ${selectedUserType === 'student' ? 'active' : ''}" onclick="selectUserType('student')">تلميذ</button>
                     <button class="user-type-btn ${selectedUserType === 'teacher' ? 'active' : ''}" onclick="selectUserType('teacher')">أستاذ</button>
@@ -537,14 +555,14 @@
                 </div>
                 <button class="submit-btn" onclick="handleLogin()">دخول</button>
                 <p style="text-align: center; margin-top: 1rem;">
-                    <a href="#" onclick="showRegisterForm()">تسجيل جديد</a>
+                    <a href="#" onclick="showRegisterForm()" style="color: #1e3c72;">تسجيل جديد</a>
                 </p>
             `);
         }
 
         function showRegisterForm() {
             showModal(`
-                <h2 style="color: #1e3c72; text-align: center;">تسجيل جديد</h2>
+                <h2 style="color: #1e3c72; text-align: center; font-size: 1.4rem;">تسجيل جديد</h2>
                 <div class="form-group">
                     <input type="text" id="regName" placeholder="الاسم الكامل">
                 </div>
@@ -561,7 +579,7 @@
                 ` : ''}
                 <button class="submit-btn" onclick="handleRegister()">تسجيل</button>
                 <p style="text-align: center; margin-top: 1rem;">
-                    <a href="#" onclick="showAuthModal()">لديك حساب؟</a>
+                    <a href="#" onclick="showAuthModal()" style="color: #1e3c72;">لديك حساب؟</a>
                 </p>
             `);
         }
@@ -660,12 +678,16 @@
             renderUI();
         }
 
+        // ========== تهيئة للتجربة على الجوال ==========
         renderUI();
 
         window.onclick = function(event) {
             const modal = document.getElementById('modal');
             if (event.target === modal) closeModal();
         };
+
+        // تحسين أداء اللمس على الجوال
+        document.addEventListener('touchstart', function(){}, {passive: true});
     </script>
 </body>
 </html>
